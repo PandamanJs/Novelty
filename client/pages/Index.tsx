@@ -239,56 +239,39 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Free Forever Section */}
       <section className="bg-card border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-          <div className="text-center mb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+          <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Simple, Transparent Pricing
+              Always Free
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the plan that's right for you.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Wordcraft is completely free forever. No hidden fees, no premium plans, no paywalls. We believe great writing tools should be accessible to everyone.
             </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {pricingPlans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-xl p-8 border transition-all ${
-                  plan.highlighted
-                    ? "border-primary bg-primary/5 ring-2 ring-primary md:scale-105 md:-my-4"
-                    : "border-border hover:border-primary/30"
-                }`}
-              >
-                <h3 className="text-2xl font-bold text-foreground mb-2">
-                  {plan.name}
-                </h3>
-                <p className="text-muted-foreground mb-6">{plan.description}</p>
-
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-foreground">
-                    {plan.price}
-                  </span>
-                  {plan.period && (
-                    <span className="text-muted-foreground">{plan.period}</span>
-                  )}
+            <div className="grid md:grid-cols-2 gap-6 mb-8">
+              {[
+                "Unlimited projects",
+                "Rich text editing",
+                "Advanced analytics",
+                "Cloud sync across devices",
+                "Export to multiple formats",
+                "Collaboration & sharing",
+              ].map((feature) => (
+                <div
+                  key={feature}
+                  className="flex items-center justify-center gap-3 p-4 rounded-lg bg-primary/5 border border-primary/20"
+                >
+                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
+                  <span className="text-foreground font-medium">{feature}</span>
                 </div>
+              ))}
+            </div>
 
-                <Button asChild className="w-full mb-8" variant={plan.variant}>
-                  <Link to="/write">{plan.cta}</Link>
-                </Button>
-
-                <div className="space-y-3">
-                  {plan.features.map((feature) => (
-                    <div key={feature} className="flex items-center gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                      <span className="text-sm text-foreground">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+            <p className="text-muted-foreground mb-8">
+              And the best part? Everything comes standard. No need to upgrade.
+            </p>
           </div>
         </div>
       </section>
