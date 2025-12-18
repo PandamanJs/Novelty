@@ -1,312 +1,239 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-import {
-  BookOpen,
-  Feather,
-  BarChart3,
-  Settings,
-  Zap,
-  Users,
-  ArrowRight,
-  Check,
-} from "lucide-react";
+import { Feather, BarChart3, Users, Zap } from "lucide-react";
 
 export default function Index() {
-  const features = [
-    {
-      icon: Feather,
-      title: "Distraction-Free Writing",
-      description: "Focus on what matters - your words. Minimal interface, maximum creativity.",
-    },
-    {
-      icon: BookOpen,
-      title: "Organize Your Ideas",
-      description: "Manage books, short stories, blog posts, and poems all in one place.",
-    },
-    {
-      icon: BarChart3,
-      title: "Writing Stats",
-      description: "Track your progress with word counts, reading time, and writing streaks.",
-    },
-    {
-      icon: Zap,
-      title: "Rich Editing",
-      description: "Format your text with bold, italics, and more to bring your writing to life.",
-    },
-    {
-      icon: Users,
-      title: "Share & Collaborate",
-      description: "Share your work with readers and collaborate with other writers.",
-    },
-    {
-      icon: Settings,
-      title: "Customizable Workspace",
-      description: "Adjust fonts, themes, and layout to match your writing style.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: "The cleanest writing tool I've ever used. Finally, a platform built for writers.",
-      author: "Sarah Chen",
-      role: "Romance Novelist",
-    },
-    {
-      quote: "My blogging productivity increased 40% since I started using Wordcraft.",
-      author: "Marcus Rodriguez",
-      role: "Tech Blogger",
-    },
-    {
-      quote: "Perfect for poetry. The distraction-free interface helped me focus on my craft.",
-      author: "Elena Volkov",
-      role: "Poet",
-    },
-  ];
-
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-4">
-                Write Your Story
-              </h1>
-              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                A beautiful, distraction-free platform for writers. Whether you're working on a novel, blog, poem, or short story, Wordcraft gives you the tools you need to write beautifully.
-              </p>
-            </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
+        <div className="max-w-3xl">
+          <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-8 tracking-tight">
+            Write your story
+          </h1>
+          <p className="text-xl sm:text-2xl text-muted-foreground font-light leading-relaxed mb-8 max-w-2xl">
+            A beautiful, distraction-free platform for writers. Whether it's a novel, blog, poem, or short story—Wordcraft gives you everything you need.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
-                <Link to="/write">Start Writing Free</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8"
-              >
-                <Link to="/projects">
-                  View Demo <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-            </div>
-
-            <div className="flex items-center gap-8 pt-4">
-              <div className="space-y-1">
-                <p className="text-2xl sm:text-3xl font-bold text-foreground">50K+</p>
-                <p className="text-sm text-muted-foreground">Active Writers</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-2xl sm:text-3xl font-bold text-foreground">2B+</p>
-                <p className="text-sm text-muted-foreground">Words Written</p>
-              </div>
-              <div className="space-y-1">
-                <p className="text-2xl sm:text-3xl font-bold text-foreground">98%</p>
-                <p className="text-sm text-muted-foreground">Happy Users</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Hero Image */}
-          <div className="hidden md:block">
-            <div className="bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 rounded-2xl p-8 h-96 flex items-center justify-center">
-              <div className="text-center text-muted-foreground">
-                <Feather className="w-24 h-24 mx-auto mb-4 opacity-50" />
-                <p className="text-lg font-medium">Your Writing, Beautifully Displayed</p>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 rounded-full font-semibold"
+            >
+              <Link to="/write">Start Writing</Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-foreground/20 text-foreground hover:bg-secondary text-base px-8 py-6 rounded-full font-semibold"
+            >
+              <Link to="/projects">See Projects</Link>
+            </Button>
           </div>
         </div>
       </section>
+
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-border" />
+      </div>
 
       {/* Features Section */}
-      <section className="bg-card border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Everything Writers Need
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Thoughtfully designed features that support your creative process from idea to publication.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={feature.title}
-                  className="p-8 rounded-xl border border-border hover:border-primary/30 hover:bg-primary/5 transition-colors"
-                >
-                  <div className="mb-4 inline-block p-3 rounded-lg bg-primary/10">
-                    <Icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Loved by Writers
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            See what writers around the world are saying about Wordcraft.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-xl bg-card border border-border hover:border-accent/30 transition-colors"
-            >
-              <p className="text-muted-foreground mb-6 leading-relaxed italic">
-                "{testimonial.quote}"
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
+        <div className="grid md:grid-cols-2 gap-16">
+          <div className="space-y-8">
+            <div>
+              <Feather className="w-12 h-12 text-foreground mb-6" />
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Distraction-free
+              </h3>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                A minimal interface that gets out of your way. Focus on what matters—your words.
               </p>
-              <div>
-                <p className="font-semibold text-foreground">{testimonial.author}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-              </div>
             </div>
-          ))}
+
+            <div>
+              <BarChart3 className="w-12 h-12 text-foreground mb-6" />
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Track progress
+              </h3>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                Word counts, reading time, writing streaks. See your progress grow.
+              </p>
+            </div>
+          </div>
+
+          <div className="space-y-8">
+            <div>
+              <Zap className="w-12 h-12 text-foreground mb-6" />
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Powerful editing
+              </h3>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                Rich text formatting, export options, and everything a writer needs.
+              </p>
+            </div>
+
+            <div>
+              <Users className="w-12 h-12 text-foreground mb-6" />
+              <h3 className="text-3xl font-bold text-foreground mb-4">
+                Share & collaborate
+              </h3>
+              <p className="text-lg text-muted-foreground font-light leading-relaxed">
+                Share your work with readers. Collaborate with other writers in real time.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Free Forever Section */}
-      <section className="bg-card border-t border-border">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-border" />
+      </div>
+
+      {/* Social Proof */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
+        <div className="grid md:grid-cols-3 gap-16">
           <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-              Always Free
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              Wordcraft is completely free forever. No hidden fees, no premium plans, no paywalls. We believe great writing tools should be accessible to everyone.
+            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+              50K+
             </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              {[
-                "Unlimited projects",
-                "Rich text editing",
-                "Advanced analytics",
-                "Cloud sync across devices",
-                "Export to multiple formats",
-                "Collaboration & sharing",
-              ].map((feature) => (
-                <div
-                  key={feature}
-                  className="flex items-center justify-center gap-3 p-4 rounded-lg bg-primary/5 border border-primary/20"
-                >
-                  <Check className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{feature}</span>
-                </div>
-              ))}
-            </div>
-
-            <p className="text-muted-foreground mb-8">
-              And the best part? Everything comes standard. No need to upgrade.
+            <p className="text-lg text-muted-foreground font-light">
+              Writers using Wordcraft
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+              2B+
+            </p>
+            <p className="text-lg text-muted-foreground font-light">
+              Words written
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+              98%
+            </p>
+            <p className="text-lg text-muted-foreground font-light">
+              User satisfaction
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-        <div className="bg-gradient-to-r from-primary to-accent rounded-2xl p-12 sm:p-16 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Start Writing?
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-border" />
+      </div>
+
+      {/* Always Free */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
+        <div className="text-center">
+          <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-6">
+            Always free
           </h2>
-          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Join thousands of writers who have found their creative home on Wordcraft.
+          <p className="text-xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto leading-relaxed">
+            No hidden fees. No premium tiers. No paywalls. Wordcraft is free forever, with all features available to everyone.
           </p>
+
           <Button
             asChild
             size="lg"
-            className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 rounded-full font-semibold"
           >
-            <Link to="/write">Start Free Today</Link>
+            <Link to="/write">Get Started</Link>
           </Button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-border bg-card mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <p className="font-bold text-foreground mb-4">Wordcraft</p>
-              <p className="text-sm text-muted-foreground">
-                A beautiful writing platform for modern creators.
-              </p>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground mb-4">Product</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link to="/write" className="hover:text-primary transition-colors">
-                    Writing
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/projects" className="hover:text-primary transition-colors">
-                    Projects
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground mb-4">Company</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link to="/" className="hover:text-primary transition-colors">
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="hover:text-primary transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <p className="font-semibold text-foreground mb-4">Legal</p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>
-                  <Link to="/" className="hover:text-primary transition-colors">
-                    Privacy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="hover:text-primary transition-colors">
-                    Terms
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+      {/* Divider */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-border" />
+      </div>
 
-          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 Wordcraft. All rights reserved.</p>
+      {/* Footer */}
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          <div>
+            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Product
+            </p>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/write" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Writing
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Projects
+                </Link>
+              </li>
+            </ul>
           </div>
+          <div>
+            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Company
+            </p>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Blog
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Legal
+            </p>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Terms
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Social
+            </p>
+            <ul className="space-y-3 text-sm">
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-border pt-12">
+          <p className="text-sm text-muted-foreground text-center">
+            &copy; 2024 Wordcraft. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
