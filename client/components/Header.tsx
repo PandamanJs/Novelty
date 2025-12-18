@@ -20,8 +20,8 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="p-2.5 rounded-lg glass-effect group-hover:glass-effect-lg transition-all duration-300">
-            <PenTool className="w-5 h-5 text-primary" strokeWidth={2.5} />
+          <div className="p-2.5 rounded-lg glass-effect group-hover:glass-effect-lg transition-all duration-300 border border-purple-500/20">
+            <PenTool className="w-5 h-5 color-primary" strokeWidth={2.5} />
           </div>
           <span className="font-semibold text-base text-foreground hidden sm:inline">
             Wordcraft
@@ -36,8 +36,8 @@ export default function Header() {
               to={link.href}
               className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
                 isActive(link.href)
-                  ? "text-primary glass-effect"
-                  : "text-muted-foreground hover:text-foreground hover:glass-effect-sm"
+                  ? "color-primary glass-effect border border-purple-500/20"
+                  : "text-muted-foreground hover:text-secondary hover:glass-effect-sm"
               }`}
             >
               {link.label}
@@ -50,7 +50,7 @@ export default function Header() {
           <Button
             asChild
             size="sm"
-            className="bg-primary hover:bg-blue-600 text-primary-foreground rounded-lg font-semibold border-0 transition-all duration-300 px-5"
+            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-lg font-semibold border-0 transition-all duration-300 px-5"
           >
             <Link to="/write">Start</Link>
           </Button>

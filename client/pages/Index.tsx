@@ -17,12 +17,12 @@ export default function Index() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6 text-sm text-foreground/80">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6 text-sm color-secondary">
             <Sparkles className="w-4 h-4" />
             <span>Craft beautiful stories</span>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 tracking-tight bg-gradient-to-r from-foreground via-blue-200 to-purple-200 bg-clip-text text-transparent">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 tracking-tight bg-gradient-to-r from-purple-300 via-foreground to-cyan-300 bg-clip-text text-transparent">
             Write your
             <br />
             story
@@ -37,7 +37,7 @@ export default function Index() {
             <Button
               asChild
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <Link to="/write">Start Writing</Link>
             </Button>
@@ -45,7 +45,7 @@ export default function Index() {
               asChild
               variant="outline"
               size="lg"
-              className="glass-effect text-foreground text-base px-8 py-6 rounded-2xl font-semibold transition-all duration-300 hover:glass-effect-lg"
+              className="glass-effect color-secondary text-base px-8 py-6 rounded-2xl font-semibold transition-all duration-300 hover:glass-effect-lg border-cyan-500/20"
             >
               <Link to="/projects">See Projects</Link>
             </Button>
@@ -61,10 +61,10 @@ export default function Index() {
       {/* Features Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Feature 1 */}
-          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+          {/* Feature 1 - Primary Purple */}
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 border border-purple-500/10 hover:border-purple-500/30">
             <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
-              <Feather className="w-6 h-6 text-purple-400" strokeWidth={1.5} />
+              <Feather className="w-6 h-6 color-primary" strokeWidth={1.5} />
             </div>
             <h3 className="text-2xl font-semibold text-foreground mb-3">
               Distraction-free
@@ -74,10 +74,10 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Feature 2 */}
-          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+          {/* Feature 2 - Secondary Cyan */}
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 border border-cyan-500/10 hover:border-cyan-500/30">
             <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
-              <BarChart3 className="w-6 h-6 text-blue-400" strokeWidth={1.5} />
+              <BarChart3 className="w-6 h-6 color-secondary" strokeWidth={1.5} />
             </div>
             <h3 className="text-2xl font-semibold text-foreground mb-3">
               Track progress
@@ -87,10 +87,10 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Feature 3 */}
-          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+          {/* Feature 3 - Accent Amber */}
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 border border-amber-500/10 hover:border-amber-500/30">
             <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
-              <Zap className="w-6 h-6 text-amber-400" strokeWidth={1.5} />
+              <Zap className="w-6 h-6 color-accent" strokeWidth={1.5} />
             </div>
             <h3 className="text-2xl font-semibold text-foreground mb-3">
               Smart tools
@@ -100,10 +100,10 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Feature 4 */}
-          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+          {/* Feature 4 - Success Green */}
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 border border-emerald-500/10 hover:border-emerald-500/30">
             <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
-              <Users className="w-6 h-6 text-cyan-400" strokeWidth={1.5} />
+              <Users className="w-6 h-6 color-success" strokeWidth={1.5} />
             </div>
             <h3 className="text-2xl font-semibold text-foreground mb-3">
               Export anywhere
@@ -123,9 +123,9 @@ export default function Index() {
       {/* Social Proof Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Stat 1 */}
-          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
-            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
+          {/* Stat 1 - Primary Purple */}
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group border border-purple-500/10">
+            <p className="text-4xl sm:text-5xl font-bold color-primary mb-2">
               50K+
             </p>
             <p className="text-muted-foreground font-light">
@@ -133,17 +133,17 @@ export default function Index() {
             </p>
           </div>
 
-          {/* Stat 2 */}
-          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
-            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+          {/* Stat 2 - Secondary Cyan */}
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group border border-cyan-500/10">
+            <p className="text-4xl sm:text-5xl font-bold color-secondary mb-2">
               2B+
             </p>
             <p className="text-muted-foreground font-light">Words written</p>
           </div>
 
-          {/* Stat 3 */}
-          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
-            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-2">
+          {/* Stat 3 - Accent Amber */}
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group border border-amber-500/10">
+            <p className="text-4xl sm:text-5xl font-bold color-accent mb-2">
               98%
             </p>
             <p className="text-muted-foreground font-light">
@@ -172,7 +172,7 @@ export default function Index() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
           >
             <Link to="/write">Get Started</Link>
           </Button>

@@ -256,7 +256,7 @@ export default function Write() {
             <Button
               size="sm"
               onClick={() => saveDraft(title, content)}
-              className="bg-primary hover:bg-blue-600 text-primary-foreground gap-2 rounded-lg font-semibold border-0 transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white gap-2 rounded-lg font-semibold border-0 transition-all duration-300"
             >
               <Save className="w-4 h-4" />
               <span className="hidden sm:inline">Save</span>

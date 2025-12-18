@@ -7,78 +7,100 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme - Wordcraft (Creative & Premium)
-   * Apple-inspired with liquid glass aesthetic
+   * Wordcraft Color System - Based on Color Wheel Theory & UI/UX Principles
+   * Triadic harmony: Purple (260°) + Cyan (180°) + Amber (40°)
+   * Visual hierarchy through saturation and brightness
   */
   :root {
-    --background: 220 35% 5%;
+    /* Neutral Foundation - Dark theme */
+    --background: 220 40% 4%;
     --foreground: 220 15% 98%;
 
-    --card: 220 35% 12%;
+    --card: 220 30% 10%;
     --card-foreground: 220 15% 98%;
 
-    --popover: 220 35% 12%;
+    --popover: 220 30% 10%;
     --popover-foreground: 220 15% 98%;
 
-    --primary: 260 100% 50%;
+    /* Primary Color - Purple (Creativity, Premium) */
+    --primary: 270 85% 55%;
     --primary-foreground: 220 35% 5%;
 
-    --secondary: 280 50% 45%;
-    --secondary-foreground: 220 15% 98%;
+    /* Secondary Color - Cyan (Trust, Information) */
+    --secondary: 190 80% 50%;
+    --secondary-foreground: 220 35% 5%;
 
-    --muted: 220 35% 25%;
-    --muted-foreground: 220 15% 65%;
+    /* Tertiary - Supporting Purple tone */
+    --tertiary: 260 70% 45%;
+    --tertiary-foreground: 220 15% 98%;
 
-    --accent: 40 100% 55%;
+    /* Muted - For secondary content */
+    --muted: 220 25% 28%;
+    --muted-foreground: 220 15% 68%;
+
+    /* Accent - Amber/Gold (Energy, Highlights) */
+    --accent: 38 95% 52%;
     --accent-foreground: 220 35% 5%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Semantic Colors */
+    --success: 140 70% 45%;
+    --warning: 38 95% 52%;
+    --error: 0 84% 55%;
+
+    --destructive: 0 84% 55%;
     --destructive-foreground: 220 15% 98%;
 
-    --border: 220 35% 20%;
-    --input: 220 35% 16%;
-    --ring: 260 100% 50%;
+    /* Borders and Inputs */
+    --border: 220 30% 18%;
+    --input: 220 30% 14%;
+    --ring: 270 85% 55%;
 
     --radius: 1.125rem;
 
-    --sidebar-background: 220 35% 8%;
+    /* Sidebar */
+    --sidebar-background: 220 30% 8%;
     --sidebar-foreground: 220 15% 98%;
-    --sidebar-primary: 260 100% 50%;
+    --sidebar-primary: 270 85% 55%;
     --sidebar-primary-foreground: 220 35% 5%;
-    --sidebar-accent: 280 50% 45%;
-    --sidebar-accent-foreground: 220 15% 98%;
-    --sidebar-border: 220 35% 20%;
-    --sidebar-ring: 260 100% 50%;
+    --sidebar-accent: 190 80% 50%;
+    --sidebar-accent-foreground: 220 35% 5%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 270 85% 55%;
   }
 
   .dark {
-    --background: 220 35% 5%;
+    --background: 220 40% 4%;
     --foreground: 220 15% 98%;
-    --card: 220 35% 12%;
+    --card: 220 30% 10%;
     --card-foreground: 220 15% 98%;
-    --popover: 220 35% 12%;
+    --popover: 220 30% 10%;
     --popover-foreground: 220 15% 98%;
-    --primary: 260 100% 50%;
+    --primary: 270 85% 55%;
     --primary-foreground: 220 35% 5%;
-    --secondary: 280 50% 45%;
-    --secondary-foreground: 220 15% 98%;
-    --muted: 220 35% 25%;
-    --muted-foreground: 220 15% 65%;
-    --accent: 40 100% 55%;
+    --secondary: 190 80% 50%;
+    --secondary-foreground: 220 35% 5%;
+    --tertiary: 260 70% 45%;
+    --tertiary-foreground: 220 15% 98%;
+    --muted: 220 25% 28%;
+    --muted-foreground: 220 15% 68%;
+    --accent: 38 95% 52%;
     --accent-foreground: 220 35% 5%;
-    --destructive: 0 62.8% 30.6%;
+    --success: 140 70% 45%;
+    --warning: 38 95% 52%;
+    --error: 0 84% 55%;
+    --destructive: 0 84% 55%;
     --destructive-foreground: 220 15% 98%;
-    --border: 220 35% 20%;
-    --input: 220 35% 16%;
-    --ring: 260 100% 50%;
-    --sidebar-background: 220 35% 8%;
+    --border: 220 30% 18%;
+    --input: 220 30% 14%;
+    --ring: 270 85% 55%;
+    --sidebar-background: 220 30% 8%;
     --sidebar-foreground: 220 15% 98%;
-    --sidebar-primary: 260 100% 50%;
+    --sidebar-primary: 270 85% 55%;
     --sidebar-primary-foreground: 220 35% 5%;
-    --sidebar-accent: 280 50% 45%;
-    --sidebar-accent-foreground: 220 15% 98%;
-    --sidebar-border: 220 35% 20%;
-    --sidebar-ring: 260 100% 50%;
+    --sidebar-accent: 190 80% 50%;
+    --sidebar-accent-foreground: 220 35% 5%;
+    --sidebar-border: 220 30% 18%;
+    --sidebar-ring: 270 85% 55%;
   }
 }
 
@@ -91,11 +113,11 @@
     @apply bg-background text-foreground;
     background: linear-gradient(
       135deg,
-      hsl(220 35% 5%) 0%,
-      hsl(260 40% 12%) 25%,
-      hsl(280 35% 8%) 50%,
-      hsl(220 40% 10%) 75%,
-      hsl(220 35% 5%) 100%
+      hsl(220 40% 4%) 0%,
+      hsl(260 45% 9%) 25%,
+      hsl(190 40% 8%) 50%,
+      hsl(220 45% 9%) 75%,
+      hsl(220 40% 4%) 100%
     );
     background-attachment: fixed;
     min-height: 100vh;
@@ -112,7 +134,7 @@
     white-space: pre;
   }
 
-  /* Liquid Glass Effect - Premium Apple-inspired */
+  /* Liquid Glass Effect - Color-aware transparency */
   .glass-effect {
     background: linear-gradient(
       135deg,
@@ -122,7 +144,10 @@
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1),
+      0 0 1px rgba(270, 85%, 55%, 0.1);
     transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
@@ -133,7 +158,10 @@
       rgba(255, 255, 255, 0.04)
     );
     border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+    box-shadow: 
+      0 12px 48px rgba(0, 0, 0, 0.15),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15),
+      0 0 2px rgba(270, 85%, 55%, 0.2);
   }
 
   .glass-effect-sm {
@@ -157,17 +185,30 @@
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    box-shadow: 
+      0 16px 64px rgba(0, 0, 0, 0.2),
+      inset 0 1px 1px rgba(255, 255, 255, 0.12);
   }
 
-  /* Liquid gradient accent */
-  .liquid-accent {
-    background: linear-gradient(
-      135deg,
-      rgba(168, 85, 247, 0.15),
-      rgba(59, 130, 246, 0.1),
-      rgba(129, 230, 217, 0.08)
-    );
+  /* Color Utility Classes - Visual Hierarchy */
+  .color-primary {
+    color: hsl(270 85% 55%);
+  }
+
+  .color-secondary {
+    color: hsl(190 80% 50%);
+  }
+
+  .color-accent {
+    color: hsl(38 95% 52%);
+  }
+
+  .color-success {
+    color: hsl(140 70% 45%);
+  }
+
+  .color-error {
+    color: hsl(0 84% 55%);
   }
 
   /* Apple blue accent text */
