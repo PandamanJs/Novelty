@@ -23,6 +23,9 @@ import { WritingTimer } from "@/components/WritingTimer";
 import { WritingPrompt } from "@/components/WritingPrompt";
 import { ExportMenu } from "@/components/ExportMenu";
 import { DraftManager, useDrafts, Draft } from "@/components/DraftManager";
+import { OutlineBuilder } from "@/components/OutlineBuilder";
+import { CharacterBuilder } from "@/components/CharacterBuilder";
+import { WritingGoals } from "@/components/WritingGoals";
 import { toast } from "sonner";
 
 export default function Write() {
@@ -239,6 +242,9 @@ export default function Write() {
 
             <WritingTimer />
             <WritingPrompt onInsert={handleInsertPrompt} />
+            <OutlineBuilder />
+            <CharacterBuilder />
+            <WritingGoals wordCount={wordCount} />
             <ExportMenu title={title} content={content} />
             <Button
               variant="outline"
