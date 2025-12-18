@@ -35,21 +35,24 @@ export default function Projects() {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-12">
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-2">
-              Your Projects
+            <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+              Projects
             </h1>
-            <p className="text-muted-foreground">
-              Manage all your writing projects in one place
+            <p className="text-lg text-muted-foreground font-light">
+              All your writing in one place
             </p>
           </div>
-          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2">
+          <Button
+            asChild
+            className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-full font-semibold px-6 py-6"
+          >
             <Link to="/write">
-              <Plus className="w-4 h-4" />
-              <span className="hidden sm:inline">New Project</span>
+              <Plus className="w-5 h-5" />
+              <span className="hidden sm:inline">New</span>
             </Link>
           </Button>
         </div>
@@ -59,28 +62,28 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-card border border-border rounded-lg p-6 hover:border-primary/30 hover:shadow-md transition-all group"
+              className="bg-card border border-border rounded-2xl p-6 hover:border-foreground/20 hover:shadow-lg transition-all group"
             >
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                  <BookOpen className="w-6 h-6 text-primary" />
+              <div className="flex items-start justify-between mb-6">
+                <div className="p-3 rounded-xl bg-secondary group-hover:bg-secondary/80 transition-colors">
+                  <BookOpen className="w-6 h-6 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="p-2 hover:bg-secondary/20 rounded-lg transition-colors">
+                  <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
                     <Share2 className="w-4 h-4 text-muted-foreground" />
                   </button>
-                  <button className="p-2 hover:bg-destructive/20 rounded-lg transition-colors">
+                  <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
                     <Trash2 className="w-4 h-4 text-muted-foreground hover:text-destructive" />
                   </button>
                 </div>
               </div>
 
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-xl font-semibold text-foreground mb-1">
                 {project.title}
               </h3>
-              <p className="text-sm text-muted-foreground mb-4">{project.type}</p>
+              <p className="text-sm text-muted-foreground mb-6">{project.type}</p>
 
-              <div className="space-y-2 mb-4 pb-4 border-b border-border">
+              <div className="space-y-3 mb-6 pb-6 border-b border-border">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-muted-foreground">Word Count</span>
                   <span className="font-medium text-foreground">
@@ -94,12 +97,12 @@ export default function Projects() {
               </div>
 
               <div className="flex items-center justify-between">
-                <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
+                <span className="text-xs px-3 py-1 rounded-full bg-secondary text-foreground font-medium">
                   {project.status}
                 </span>
                 <Link
                   to="/write"
-                  className="text-sm font-medium text-primary hover:text-primary/80 transition-colors"
+                  className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
                 >
                   Edit →
                 </Link>
@@ -109,13 +112,13 @@ export default function Projects() {
         </div>
 
         {/* Empty State Helper */}
-        <div className="mt-12 p-8 rounded-lg border border-border bg-card text-center">
-          <BookOpen className="w-12 h-12 text-muted-foreground mx-auto mb-4 opacity-50" />
-          <h3 className="text-lg font-semibold text-foreground mb-2">
-            Want more projects?
+        <div className="mt-16 p-12 rounded-2xl border border-border bg-card text-center">
+          <BookOpen className="w-16 h-16 text-muted-foreground mx-auto mb-6 opacity-30" />
+          <h3 className="text-2xl font-semibold text-foreground mb-3">
+            Start writing
           </h3>
-          <p className="text-muted-foreground mb-4">
-            Start a new writing project by clicking the "New Project" button above, or continue customizing the app by prompting in the chat!
+          <p className="text-muted-foreground mb-8 font-light leading-relaxed max-w-md mx-auto">
+            Create a new project and start bringing your ideas to life. Tell me in the chat what you'd like to add next.
           </p>
         </div>
       </div>
