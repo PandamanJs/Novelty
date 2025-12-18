@@ -9,10 +9,15 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
-        <div className="max-w-3xl">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40 relative overflow-hidden">
+        {/* Decorative gradient orbs */}
+        <div className="absolute -top-20 -right-20 w-96 h-96 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-40" />
+        <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full blur-3xl opacity-40" />
+
+        <div className="relative max-w-3xl z-10">
           <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-foreground leading-tight mb-8 tracking-tight">
-            Write your story
+            Write your
+            <span className="gradient-text block">story</span>
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground font-light leading-relaxed mb-8 max-w-2xl">
             A beautiful, distraction-free platform for writers. Whether it's a novel, blog, poem, or short story—Wordcraft gives you everything you need.
@@ -22,7 +27,7 @@ export default function Index() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 rounded-full font-semibold"
+              className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground text-lg px-8 py-6 rounded-full font-semibold border-0 transition-all duration-300"
             >
               <Link to="/write">Start Writing</Link>
             </Button>
@@ -30,7 +35,7 @@ export default function Index() {
               asChild
               variant="outline"
               size="lg"
-              className="border-foreground/20 text-foreground hover:bg-secondary text-base px-8 py-6 rounded-full font-semibold"
+              className="border-muted text-foreground hover:bg-muted/30 hover:border-primary/50 text-lg px-8 py-6 rounded-full font-semibold transition-all duration-300"
             >
               <Link to="/projects">See Projects</Link>
             </Button>
@@ -40,16 +45,18 @@ export default function Index() {
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-border" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* Features Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
         <div className="grid md:grid-cols-2 gap-16">
           <div className="space-y-8">
-            <div>
-              <Feather className="w-12 h-12 text-foreground mb-6" />
-              <h3 className="text-3xl font-bold text-foreground mb-4">
+            <div className="group">
+              <div className="p-3 w-fit rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 group-hover:from-primary/30 group-hover:to-secondary/20 transition-all duration-300 mb-4">
+                <Feather className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-3xl font-bold text-foreground mb-4 group-hover:gradient-text transition-all">
                 Distraction-free
               </h3>
               <p className="text-lg text-muted-foreground font-light leading-relaxed">
@@ -57,8 +64,10 @@ export default function Index() {
               </p>
             </div>
 
-            <div>
-              <BarChart3 className="w-12 h-12 text-foreground mb-6" />
+            <div className="group">
+              <div className="p-3 w-fit rounded-xl bg-gradient-to-br from-secondary/20 to-primary/10 group-hover:from-secondary/30 group-hover:to-primary/20 transition-all duration-300 mb-4">
+                <BarChart3 className="w-6 h-6 text-secondary" />
+              </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
                 Track progress
               </h3>
@@ -69,8 +78,10 @@ export default function Index() {
           </div>
 
           <div className="space-y-8">
-            <div>
-              <Zap className="w-12 h-12 text-foreground mb-6" />
+            <div className="group">
+              <div className="p-3 w-fit rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 group-hover:from-primary/30 group-hover:to-secondary/20 transition-all duration-300 mb-4">
+                <Zap className="w-6 h-6 text-primary" />
+              </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
                 Powerful editing
               </h3>
@@ -79,8 +90,10 @@ export default function Index() {
               </p>
             </div>
 
-            <div>
-              <Users className="w-12 h-12 text-foreground mb-6" />
+            <div className="group">
+              <div className="p-3 w-fit rounded-xl bg-gradient-to-br from-secondary/20 to-primary/10 group-hover:from-secondary/30 group-hover:to-primary/20 transition-all duration-300 mb-4">
+                <Users className="w-6 h-6 text-secondary" />
+              </div>
               <h3 className="text-3xl font-bold text-foreground mb-4">
                 Share & collaborate
               </h3>
@@ -94,30 +107,30 @@ export default function Index() {
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-border" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* Social Proof */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
         <div className="grid md:grid-cols-3 gap-16">
-          <div className="text-center">
-            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/5 border border-border hover:border-primary/30 transition-all duration-300">
+            <p className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
               50K+
             </p>
             <p className="text-lg text-muted-foreground font-light">
               Writers using Wordcraft
             </p>
           </div>
-          <div className="text-center">
-            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-secondary/10 to-primary/5 border border-border hover:border-secondary/30 transition-all duration-300">
+            <p className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">
               2B+
             </p>
             <p className="text-lg text-muted-foreground font-light">
               Words written
             </p>
           </div>
-          <div className="text-center">
-            <p className="text-5xl sm:text-6xl font-bold text-foreground mb-2">
+          <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/5 border border-border hover:border-primary/30 transition-all duration-300">
+            <p className="text-5xl sm:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
               98%
             </p>
             <p className="text-lg text-muted-foreground font-light">
@@ -129,14 +142,19 @@ export default function Index() {
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-border" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* Always Free */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40">
-        <div className="text-center">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-40 relative overflow-hidden">
+        {/* Decorative gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl -z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl opacity-30" />
+
+        <div className="text-center relative z-10">
           <h2 className="text-5xl sm:text-6xl font-bold text-foreground mb-6">
-            Always free
+            Always
+            <span className="gradient-text block">free</span>
           </h2>
           <p className="text-xl text-muted-foreground font-light mb-8 max-w-2xl mx-auto leading-relaxed">
             No hidden fees. No premium tiers. No paywalls. Wordcraft is free forever, with all features available to everyone.
@@ -145,7 +163,7 @@ export default function Index() {
           <Button
             asChild
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground text-base px-8 py-6 rounded-full font-semibold"
+            className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground text-lg px-8 py-6 rounded-full font-semibold border-0 transition-all duration-300"
           >
             <Link to="/write">Get Started</Link>
           </Button>
@@ -154,7 +172,7 @@ export default function Index() {
 
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-border" />
+        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
       {/* Footer */}
@@ -166,12 +184,12 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/write" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/write" className="text-muted-foreground hover:text-primary transition-colors">
                   Writing
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/projects" className="text-muted-foreground hover:text-primary transition-colors">
                   Projects
                 </Link>
               </li>
@@ -183,12 +201,12 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Blog
                 </Link>
               </li>
@@ -200,12 +218,12 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
                   Terms
                 </Link>
               </li>
@@ -217,12 +235,12 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   Twitter
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
                   Instagram
                 </a>
               </li>
