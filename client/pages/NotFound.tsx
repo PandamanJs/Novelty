@@ -26,7 +26,7 @@ const NotFound = () => {
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
             This page is still being written. Let us know what you'd like to see here by prompting in the chat!
           </p>
-          <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          <Button asChild className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground rounded-full border-0 transition-all duration-300">
             <Link to="/">Back to Home</Link>
           </Button>
         </div>
