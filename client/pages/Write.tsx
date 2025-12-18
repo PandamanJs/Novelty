@@ -9,8 +9,8 @@ import {
   Save,
   Clock,
   Eye,
+  EyeOff,
   MoreVertical,
-  ChevronLeft,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -36,7 +36,7 @@ export default function Write() {
       <Header />
 
       {/* Top Bar */}
-      <div className="border-b border-border bg-card">
+      <div className="border-b border-border bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
             <input
@@ -55,7 +55,11 @@ export default function Write() {
               onClick={() => setShowStats(!showStats)}
               className="text-muted-foreground hover:text-foreground"
             >
-              <Eye className="w-4 h-4" />
+              {showStats ? (
+                <Eye className="w-4 h-4" />
+              ) : (
+                <EyeOff className="w-4 h-4" />
+              )}
             </Button>
 
             <DropdownMenu>
@@ -81,27 +85,32 @@ export default function Write() {
       {/* Main Editor Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar */}
-        <div className="hidden lg:flex flex-col w-64 border-r border-border bg-card p-6 overflow-y-auto">
-          <h3 className="font-semibold text-foreground mb-4">Projects</h3>
+        <div className="hidden lg:flex flex-col w-64 border-r border-border bg-background p-6 overflow-y-auto">
+          <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+            Projects
+          </h3>
 
           <div className="space-y-2 mb-8">
-            <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 cursor-pointer hover:bg-primary/20 transition-colors">
-              <p className="font-medium text-sm text-primary">Untitled Story</p>
+            <div className="p-3 rounded-lg bg-secondary border border-border cursor-pointer hover:bg-secondary/80 transition-colors">
+              <p className="font-medium text-sm text-foreground">Untitled Story</p>
               <p className="text-xs text-muted-foreground mt-1">Today at 10:30 AM</p>
             </div>
 
-            <div className="p-3 rounded-lg border border-border hover:bg-secondary/10 transition-colors cursor-pointer opacity-50">
+            <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
               <p className="font-medium text-sm text-foreground">My First Novel</p>
               <p className="text-xs text-muted-foreground mt-1">Yesterday</p>
             </div>
 
-            <div className="p-3 rounded-lg border border-border hover:bg-secondary/10 transition-colors cursor-pointer opacity-50">
+            <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
               <p className="font-medium text-sm text-foreground">Poetry Collection</p>
               <p className="text-xs text-muted-foreground mt-1">3 days ago</p>
             </div>
           </div>
 
-          <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button
+            variant="outline"
+            className="w-full border-foreground/20 text-foreground hover:bg-secondary rounded-full font-semibold"
+          >
             + New Project
           </Button>
         </div>
@@ -109,11 +118,11 @@ export default function Write() {
         {/* Main Editor */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Formatting Toolbar */}
-          <div className="border-b border-border bg-card px-4 sm:px-6 py-3 flex items-center gap-2">
+          <div className="border-b border-border bg-background px-4 sm:px-6 py-3 flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground hover:bg-secondary/20"
+              className="text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               title="Bold"
             >
               <Bold className="w-4 h-4" />
@@ -121,7 +130,7 @@ export default function Write() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground hover:bg-secondary/20"
+              className="text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               title="Italic"
             >
               <Italic className="w-4 h-4" />
@@ -129,7 +138,7 @@ export default function Write() {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-foreground hover:bg-secondary/20"
+              className="text-muted-foreground hover:text-foreground hover:bg-secondary/50"
               title="List"
             >
               <List className="w-4 h-4" />
@@ -139,7 +148,7 @@ export default function Write() {
 
             <Button
               size="sm"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-full font-semibold"
             >
               <Save className="w-4 h-4" />
               <span className="hidden sm:inline">Save Draft</span>
@@ -162,71 +171,84 @@ export default function Write() {
 
             {/* Right Stats Panel */}
             {showStats && (
-              <div className="hidden md:flex flex-col w-72 border-l border-border bg-card p-6 overflow-y-auto">
-                <h3 className="font-semibold text-foreground mb-6">Writing Stats</h3>
+              <div className="hidden md:flex flex-col w-80 border-l border-border bg-background p-8 overflow-y-auto">
+                <h3 className="font-semibold text-foreground mb-8 text-sm uppercase tracking-wide opacity-70">
+                  Statistics
+                </h3>
 
-                <div className="space-y-6">
+                <div className="space-y-8">
                   {/* Word Count */}
-                  <div className="p-4 rounded-lg bg-primary/10 border border-primary/20">
-                    <p className="text-sm text-muted-foreground mb-1">Words</p>
-                    <p className="text-3xl font-bold text-primary">{wordCount}</p>
-                  </div>
-
-                  {/* Character Count */}
-                  <div className="p-4 rounded-lg bg-accent/10 border border-accent/20">
-                    <p className="text-sm text-muted-foreground mb-1">Characters</p>
-                    <p className="text-3xl font-bold text-accent">{charCount}</p>
-                  </div>
-
-                  {/* Reading Time */}
-                  <div className="p-4 rounded-lg bg-secondary/10 border border-secondary/20">
-                    <div className="flex items-center gap-2 mb-1">
-                      <Clock className="w-4 h-4 text-muted-foreground" />
-                      <p className="text-sm text-muted-foreground">Est. Reading Time</p>
-                    </div>
-                    <p className="text-3xl font-bold text-secondary">
-                      {readingTime}
-                      <span className="text-base ml-1">min</span>
+                  <div>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">
+                      Words
+                    </p>
+                    <p className="text-4xl font-bold text-foreground">
+                      {wordCount}
                     </p>
                   </div>
 
+                  {/* Character Count */}
+                  <div>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">
+                      Characters
+                    </p>
+                    <p className="text-4xl font-bold text-foreground">
+                      {charCount}
+                    </p>
+                  </div>
+
+                  {/* Reading Time */}
+                  <div>
+                    <p className="text-sm text-muted-foreground font-medium mb-2">
+                      Est. Reading Time
+                    </p>
+                    <p className="text-4xl font-bold text-foreground">
+                      {readingTime}
+                      <span className="text-lg ml-2 font-normal">min</span>
+                    </p>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="border-t border-border" />
+
                   {/* Daily Stats */}
-                  <div className="border-t border-border pt-6">
-                    <p className="font-semibold text-foreground mb-4">Today's Progress</p>
-                    <div className="space-y-3">
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">
-                          Words written
-                        </p>
-                        <p className="text-lg font-semibold text-foreground">
+                  <div>
+                    <p className="text-sm text-muted-foreground font-medium mb-4">
+                      TODAY'S PROGRESS
+                    </p>
+                    <div className="space-y-3 text-sm">
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Words written</span>
+                        <span className="font-medium text-foreground">
                           {wordCount}
-                        </p>
+                        </span>
                       </div>
-                      <div>
-                        <p className="text-xs text-muted-foreground mb-1">
-                          Writing streak
-                        </p>
-                        <p className="text-lg font-semibold text-foreground">
-                          3 days
-                        </p>
+                      <div className="flex justify-between">
+                        <span className="text-muted-foreground">Writing streak</span>
+                        <span className="font-medium text-foreground">3 days</span>
                       </div>
                     </div>
                   </div>
 
+                  {/* Divider */}
+                  <div className="border-t border-border" />
+
                   {/* Goals */}
-                  <div className="border-t border-border pt-6">
-                    <p className="font-semibold text-foreground mb-4">Daily Goal</p>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-sm text-muted-foreground">
+                  <div>
+                    <p className="text-sm text-muted-foreground font-medium mb-4">
+                      DAILY GOAL
+                    </p>
+                    <div className="flex items-center justify-between mb-3 text-sm">
+                      <span className="text-muted-foreground">
                         {wordCount} / 2000
                       </span>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-muted-foreground">
                         {Math.round((wordCount / 2000) * 100)}%
                       </span>
                     </div>
-                    <div className="w-full bg-border rounded-full h-2">
+                    <div className="w-full bg-secondary rounded-full h-1.5">
                       <div
-                        className="bg-primary h-2 rounded-full transition-all"
+                        className="bg-foreground h-1.5 rounded-full transition-all"
                         style={{
                           width: `${Math.min((wordCount / 2000) * 100, 100)}%`,
                         }}
