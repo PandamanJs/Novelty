@@ -36,7 +36,7 @@ export default function Write() {
       <Header />
 
       {/* Top Bar */}
-      <div className="border-b border-border bg-background">
+      <div className="border-b border-border bg-background/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
             <input
@@ -85,13 +85,13 @@ export default function Write() {
       {/* Main Editor Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar */}
-        <div className="hidden lg:flex flex-col w-64 border-r border-border bg-background p-6 overflow-y-auto">
+        <div className="hidden lg:flex flex-col w-64 border-r border-border bg-background/50 backdrop-blur-md p-6 overflow-y-auto">
           <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
             Projects
           </h3>
 
           <div className="space-y-2 mb-8">
-            <div className="p-3 rounded-lg bg-secondary border border-border cursor-pointer hover:bg-secondary/80 transition-colors">
+            <div className="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10 border border-primary/20 cursor-pointer hover:from-primary/30 hover:to-secondary/20 transition-all duration-300">
               <p className="font-medium text-sm text-foreground">Untitled Story</p>
               <p className="text-xs text-muted-foreground mt-1">Today at 10:30 AM</p>
             </div>
@@ -109,7 +109,7 @@ export default function Write() {
 
           <Button
             variant="outline"
-            className="w-full border-foreground/20 text-foreground hover:bg-secondary rounded-full font-semibold"
+            className="w-full border-muted text-foreground hover:bg-muted/30 hover:border-primary/50 rounded-full font-semibold transition-all duration-300"
           >
             + New Project
           </Button>
@@ -118,7 +118,7 @@ export default function Write() {
         {/* Main Editor */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Formatting Toolbar */}
-          <div className="border-b border-border bg-background px-4 sm:px-6 py-3 flex items-center gap-2">
+          <div className="border-b border-border bg-background/50 backdrop-blur-md px-4 sm:px-6 py-3 flex items-center gap-2">
             <Button
               variant="ghost"
               size="sm"
@@ -148,7 +148,7 @@ export default function Write() {
 
             <Button
               size="sm"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-full font-semibold"
+              className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground gap-2 rounded-full font-semibold border-0 transition-all duration-300"
             >
               <Save className="w-4 h-4" />
               <span className="hidden sm:inline">Save Draft</span>
@@ -171,7 +171,7 @@ export default function Write() {
 
             {/* Right Stats Panel */}
             {showStats && (
-              <div className="hidden md:flex flex-col w-80 border-l border-border bg-background p-8 overflow-y-auto">
+              <div className="hidden md:flex flex-col w-80 border-l border-border bg-background/50 backdrop-blur-md p-8 overflow-y-auto">
                 <h3 className="font-semibold text-foreground mb-8 text-sm uppercase tracking-wide opacity-70">
                   Statistics
                 </h3>
