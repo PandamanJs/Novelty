@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-import { Feather, BarChart3, Users, Zap } from "lucide-react";
+import { Feather, BarChart3, Users, Zap, Sparkles } from "lucide-react";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background pt-16">
+    <div className="min-h-screen bg-background pt-16 overflow-hidden">
       <Header />
 
+      {/* Animated background elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-32 left-10 w-96 h-96 bg-gradient-to-tr from-blue-500/15 to-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      </div>
+
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="max-w-3xl">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 tracking-tight">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6 text-sm text-foreground/80">
+            <Sparkles className="w-4 h-4" />
+            <span>Craft beautiful stories</span>
+          </div>
+          
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 tracking-tight bg-gradient-to-r from-foreground via-blue-200 to-purple-200 bg-clip-text text-transparent">
             Write your
             <br />
             story
@@ -19,14 +30,14 @@ export default function Index() {
           <p className="text-xl text-muted-foreground font-light leading-relaxed mb-12 max-w-2xl">
             A beautiful, distraction-free platform for writers. Whether it's a
             novel, blog, poem, or short story—Wordcraft gives you everything you
-            need.
+            need to create and share.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-blue-600 text-primary-foreground text-base px-6 py-6 rounded-lg font-semibold border-0 transition-all duration-300"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
             >
               <Link to="/write">Start Writing</Link>
             </Button>
@@ -34,7 +45,7 @@ export default function Index() {
               asChild
               variant="outline"
               size="lg"
-              className="border border-border/50 text-foreground hover:glass-effect text-base px-6 py-6 rounded-lg font-semibold transition-all duration-300"
+              className="glass-effect text-foreground text-base px-8 py-6 rounded-2xl font-semibold transition-all duration-300 hover:glass-effect-lg"
             >
               <Link to="/projects">See Projects</Link>
             </Button>
@@ -43,66 +54,62 @@ export default function Index() {
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 via-blue-500/30 to-transparent" />
       </div>
 
       {/* Features Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
-        <div className="grid md:grid-cols-2 gap-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* Feature 1 */}
-          <div>
-            <div className="p-3 w-fit rounded-lg glass-effect mb-6">
-              <Feather className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+            <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
+              <Feather className="w-6 h-6 text-purple-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
               Distraction-free
             </h3>
-            <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              A minimal interface that gets out of your way. Focus on what
-              matters—your words.
+            <p className="text-base text-muted-foreground font-light leading-relaxed">
+              A minimal interface that gets out of your way. Focus mode hides everything except your words.
             </p>
           </div>
 
           {/* Feature 2 */}
-          <div>
-            <div className="p-3 w-fit rounded-lg glass-effect mb-6">
-              <BarChart3 className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+            <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
+              <BarChart3 className="w-6 h-6 text-blue-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
               Track progress
             </h3>
-            <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Word counts, reading time, writing streaks. See your progress
-              grow.
+            <p className="text-base text-muted-foreground font-light leading-relaxed">
+              Real-time word counts, reading time estimates, and writing streaks to keep you motivated.
             </p>
           </div>
 
           {/* Feature 3 */}
-          <div>
-            <div className="p-3 w-fit rounded-lg glass-effect mb-6">
-              <Zap className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+            <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
+              <Zap className="w-6 h-6 text-amber-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
-              Powerful editing
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
+              Smart tools
             </h3>
-            <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Rich text formatting, export options, and everything a writer
-              needs.
+            <p className="text-base text-muted-foreground font-light leading-relaxed">
+              Pomodoro timer, writing prompts, and auto-save all your drafts automatically.
             </p>
           </div>
 
           {/* Feature 4 */}
-          <div>
-            <div className="p-3 w-fit rounded-lg glass-effect mb-6">
-              <Users className="w-6 h-6 text-primary" strokeWidth={1.5} />
+          <div className="group glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300">
+            <div className="p-4 w-fit rounded-xl glass-effect group-hover:glass-effect-lg mb-6 transition-all duration-300">
+              <Users className="w-6 h-6 text-cyan-400" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-4">
-              Share & collaborate
+            <h3 className="text-2xl font-semibold text-foreground mb-3">
+              Export anywhere
             </h3>
-            <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Share your work with readers. Collaborate with other writers in
-              real time.
+            <p className="text-base text-muted-foreground font-light leading-relaxed">
+              Download as TXT, Markdown, or HTML. Share your stories with the world.
             </p>
           </div>
         </div>
@@ -114,11 +121,11 @@ export default function Index() {
       </div>
 
       {/* Social Proof Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Stat 1 */}
-          <div className="glass-effect p-8 rounded-xl">
-            <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
+            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
               50K+
             </p>
             <p className="text-muted-foreground font-light">
@@ -127,16 +134,16 @@ export default function Index() {
           </div>
 
           {/* Stat 2 */}
-          <div className="glass-effect p-8 rounded-xl">
-            <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
+            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
               2B+
             </p>
             <p className="text-muted-foreground font-light">Words written</p>
           </div>
 
           {/* Stat 3 */}
-          <div className="glass-effect p-8 rounded-xl">
-            <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
+          <div className="glass-effect p-8 rounded-2xl hover:glass-effect-lg transition-all duration-300 group">
+            <p className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent mb-2">
               98%
             </p>
             <p className="text-muted-foreground font-light">
@@ -152,22 +159,24 @@ export default function Index() {
       </div>
 
       {/* Always Free Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center">
-        <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
-          Always free
-        </h2>
-        <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-          No hidden fees. No premium tiers. No paywalls. Wordcraft is free
-          forever, with all features available to everyone.
-        </p>
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center relative z-10">
+        <div className="glass-effect p-12 rounded-3xl">
+          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6">
+            Always free
+          </h2>
+          <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto leading-relaxed">
+            No hidden fees. No premium tiers. No paywalls. Wordcraft is free
+            forever, with all features available to everyone.
+          </p>
 
-        <Button
-          asChild
-          size="lg"
-          className="bg-primary hover:bg-blue-600 text-primary-foreground text-base px-8 py-6 rounded-lg font-semibold border-0 transition-all duration-300 mx-auto"
-        >
-          <Link to="/write">Get Started</Link>
-        </Button>
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+          >
+            <Link to="/write">Get Started</Link>
+          </Button>
+        </div>
       </section>
 
       {/* Divider */}

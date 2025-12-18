@@ -1,118 +1,122 @@
-# Fusion Starter (Wordcraft)
+# Wordcraft - Premium Writing Platform
 
-A fullstack React + Express writing platform for authors and writers.
+A distraction-free writing platform with a premium Apple-inspired liquid glass aesthetic.
 
-## Overview
+## Design & Aesthetic
 
-Wordcraft is a distraction-free writing platform built with:
-- **Frontend**: React + Vite + TailwindCSS with shadcn/ui components
-- **Backend**: Express.js API (integrated with Vite dev server)
-- **Styling**: TailwindCSS with typography plugin
-- **Storage**: localStorage for draft management
+**Liquid Glass Morphism (Apple Touch)**
+- Gradient backgrounds with subtle depth
+- Frosted glass effects with backdrop blur (12-32px)
+- Smooth hover animations and transitions
+- Premium shadows and inset highlights
+- Color palette: Deep blues, purples, with accent gradients
+- Animated floating background elements
+- Gradient text effects on hero and stats
+
+## Features
+
+### Writing Tools
+- **Focus Mode** - Distraction-free interface, full-screen editor
+- **Pomodoro Timer** - 25/5 minute focus/break cycles
+- **Writing Prompts** - 15+ curated prompts for inspiration
+- **Draft Manager** - Local storage with auto-save (30s interval)
+- **Export Options** - Download as TXT, Markdown, or HTML
+
+### Statistics & Tracking
+- Real-time word/character counting
+- Reading time estimation
+- Daily writing goals with progress bar
+- Writing streak tracking
+- Session statistics
+
+### UI/UX
+- Responsive design (desktop, tablet, mobile)
+- Smooth animations and transitions
+- Premium button styles with gradient effects
+- Sidebar with writing tips or saved drafts
+- Toggle stats visibility
+- Glass-effect cards and panels
 
 ## Project Structure
 
 ```
-├── client/
-│   ├── components/
-│   │   ├── ui/              # shadcn/ui components
-│   │   ├── WritingTimer.tsx # Pomodoro timer (25/5 min)
-│   │   ├── WritingPrompt.tsx# Writing prompt generator
-│   │   ├── ExportMenu.tsx   # Export as TXT/MD/HTML
-│   │   ├── DraftManager.tsx # Draft management UI
-│   │   └── Header.tsx
-│   ├── pages/
-│   │   ├── Index.tsx        # Landing page
-│   │   ├── Write.tsx        # Main editor (enhanced)
-│   │   ├── Projects.tsx
-│   │   └── NotFound.tsx
-│   ├── hooks/
-│   ├── lib/
-│   │   └── export.ts        # Export utilities
-│   └── App.tsx
-├── server/
-│   ├── index.ts             # Server factory
-│   └── node-build.ts        # Production entry point
-├── shared/
-└── public/
+client/
+├── pages/
+│   ├── Index.tsx              # Landing page (redesigned)
+│   ├── Write.tsx              # Main editor
+│   ├── Projects.tsx
+│   └── NotFound.tsx
+├── components/
+│   ├── WritingTimer.tsx        # Pomodoro timer
+│   ├── WritingPrompt.tsx       # Prompt generator
+│   ├── DraftManager.tsx        # Draft management
+│   ├── ExportMenu.tsx          # Export functionality
+│   ├── Header.tsx              # Navigation
+│   └── ui/                     # shadcn/ui components
+├── lib/
+│   ├── export.ts               # Export utilities
+│   └── utils.ts
+├── global.css                  # Global styles with liquid glass effects
+└── main.tsx
 ```
-
-## Writer Features
-
-### Core Editor
-- Real-time word/character/reading time stats
-- Daily writing goals with progress tracking
-- Writing streak counter
-- Focus mode (distraction-free interface)
-- Auto-save every 30 seconds
-
-### Writing Tools
-1. **Writing Timer** - Pomodoro-style timer (25 min default)
-2. **Writing Prompts** - Curated prompt library to spark inspiration
-3. **Draft Manager** - Save, load, and manage multiple drafts locally
-4. **Export Options** - Download as:
-   - Plain Text (.txt)
-   - Markdown (.md)
-   - HTML (.html)
-
-### UI Features
-- Stats panel (toggle visibility)
-- Focus mode (hide sidebar/stats)
-- Drafts sidebar (view/load saved work)
-- Formatting toolbar
-- Responsive design (desktop/mobile)
 
 ## Development
 
-Dev server runs on **port 5000** with both frontend (Vite) and backend (Express).
-
 ```bash
-npm run dev
+npm run dev          # Start dev server on port 5000
+npm run build        # Build for production
+npm run start        # Run production build
 ```
 
-Access at: http://localhost:5000
-
-## API Endpoints
-
-- `GET /api/ping` - Health check
-- `GET /api/demo` - Demo endpoint
-
-## Build & Production
+## Production Deployment
 
 ```bash
+# Build both client and server
 npm run build
+
+# Run production server (port 5000 on Replit)
 node dist/server/production.mjs
 ```
 
-Production server runs on port (default 3000, configured for 5000 on Replit)
+## Recent Design Updates (v2.1)
+
+**Premium Liquid Glass Aesthetic**
+- Refined color scheme: Deep navy blues → purple → dark blue gradients
+- Enhanced glass-effect classes with gradient backgrounds and proper shadows
+- Animated floating background elements
+- Premium gradient buttons (purple → blue)
+- Updated feature cards with hover glass-effect-lg
+- Stats with gradient text effects
+- Refined hero section with gradient text heading
+- Better visual hierarchy and spacing
+
+**Technical Improvements**
+- Added `-webkit-backdrop-filter` for browser compatibility
+- Inset shadows for premium glass appearance
+- Cubic-bezier easing for smooth animations
+- Fixed hover states with proper transitions
+- Gradient dividers throughout
+
+## Browser Support
+
+Liquid glass effects work best on:
+- Chrome/Edge 76+
+- Safari 13+
+- Firefox 103+
+- Mobile Safari (iOS 13+)
 
 ## Data Storage
 
-- **Drafts**: Stored in browser localStorage under `wordcraft_drafts`
-- **Auto-save**: Triggered every 30 seconds when editing
-
-## Recent Changes
-
-**v2.0 - 2025-12-18: Enhanced Writer Platform**
-- Added Writing Timer (Pomodoro support)
-- Added Writing Prompt generator with 15+ curated prompts
-- Implemented Draft Manager with localStorage persistence
-- Added Export functionality (TXT, Markdown, HTML)
-- Implemented auto-save (30-second interval)
-- Added Focus Mode for distraction-free writing
-- Enhanced sidebar with Writing Tips and Draft browser
-- Improved toolbar with new features
-
-**v1.0 - Initial Setup**
-- Configured for Replit (port 5000, allowed hosts)
-- Integrated Express with Vite dev server
-- Set up production build configuration
+- **Drafts**: Browser localStorage (`wordcraft_drafts`)
+- **Auto-save**: Every 30 seconds
+- **Offline capable**: All data stored locally
 
 ## Future Enhancements
 
-- Rich text editor with formatting support
 - Cloud sync for drafts
-- Collaboration features
-- Writing analytics/insights
-- Mobile app
-- Custom writing goals by project
+- Collaborative editing
+- Rich text editor
+- Custom themes
+- Mobile apps
+- Writing analytics dashboard
+- Community features
