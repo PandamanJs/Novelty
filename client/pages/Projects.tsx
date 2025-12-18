@@ -48,7 +48,7 @@ export default function Projects() {
           </div>
           <Button
             asChild
-            className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-full font-semibold px-6 py-6"
+            className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground gap-2 rounded-full font-semibold px-6 py-6 border-0 transition-all duration-300"
           >
             <Link to="/write">
               <Plus className="w-5 h-5" />
@@ -62,10 +62,10 @@ export default function Projects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="bg-card border border-border rounded-2xl p-6 hover:border-foreground/20 hover:shadow-lg transition-all group"
+              className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 group"
             >
               <div className="flex items-start justify-between mb-6">
-                <div className="p-3 rounded-xl bg-secondary group-hover:bg-secondary/80 transition-colors">
+                <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 group-hover:from-primary/30 group-hover:to-secondary/20 transition-all duration-300">
                   <BookOpen className="w-6 h-6 text-foreground" strokeWidth={1.5} />
                 </div>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -112,7 +112,7 @@ export default function Projects() {
         </div>
 
         {/* Empty State Helper */}
-        <div className="mt-16 p-12 rounded-2xl border border-border bg-card text-center">
+        <div className="mt-16 p-12 rounded-2xl border border-border bg-gradient-to-br from-card to-primary/5 text-center">
           <BookOpen className="w-16 h-16 text-muted-foreground mx-auto mb-6 opacity-30" />
           <h3 className="text-2xl font-semibold text-foreground mb-3">
             Start writing
