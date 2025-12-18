@@ -1,16 +1,17 @@
 import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Bold,
   Italic,
   List,
   Save,
-  Clock,
   Eye,
   EyeOff,
   MoreVertical,
+  Focus,
+  FolderOpen,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -18,6 +19,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { WritingTimer } from "@/components/WritingTimer";
+import { WritingPrompt } from "@/components/WritingPrompt";
+import { ExportMenu } from "@/components/ExportMenu";
+import { DraftManager, useDrafts, Draft } from "@/components/DraftManager";
+import { toast } from "sonner";
 
 export default function Write() {
   const [content, setContent] = useState(
@@ -25,11 +31,78 @@ export default function Write() {
   );
   const [title, setTitle] = useState("Untitled Story");
   const [showStats, setShowStats] = useState(true);
+  const [focusMode, setFocusMode] = useState(false);
+  const [showDrafts, setShowDrafts] = useState(false);
+  const { drafts, saveDraft, deleteDraft, loadDraft } = useDrafts();
+
+  // Auto-save drafts every 30 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (content.trim()) {
+        saveDraft(title, content);
+      }
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [content, title]);
 
   // Calculate writing stats
   const wordCount = content.trim().split(/\s+/).filter(Boolean).length;
   const charCount = content.length;
   const readingTime = Math.ceil(wordCount / 200);
+
+  const handleLoadDraft = (draft: Draft) => {
+    setTitle(draft.title);
+    setContent(draft.content);
+    setShowDrafts(false);
+    toast.success(`Loaded: ${draft.title}`);
+  };
+
+  const handleInsertPrompt = (prompt: string) => {
+    const newContent = content + (content.endsWith("\n") ? "" : "\n\n") + `[Prompt: ${prompt}]\n`;
+    setContent(newContent);
+  };
+
+  if (focusMode) {
+    return (
+      <div className="min-h-screen bg-background flex flex-col">
+        <div className="border-b border-border bg-background/50 backdrop-blur-md px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setFocusMode(false)}
+              className="gap-2"
+            >
+              <Focus className="w-4 h-4" />
+              Exit Focus Mode
+            </Button>
+            <span className="text-sm text-muted-foreground">
+              {wordCount} words
+            </span>
+          </div>
+          <WritingTimer />
+        </div>
+        <div className="flex-1 overflow-auto p-8 lg:p-12">
+          <div className="max-w-3xl mx-auto h-full">
+            <input
+              type="text"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              className="text-2xl font-bold text-foreground bg-transparent border-0 focus:outline-none w-full mb-6"
+              placeholder="Untitled Story"
+            />
+            <Textarea
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
+              placeholder="Start typing your story here..."
+              className="w-full h-full min-h-[600px] border-0 focus:ring-0 p-0 resize-none text-base leading-relaxed bg-transparent text-foreground placeholder-muted-foreground"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -48,12 +121,13 @@ export default function Write() {
             />
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setShowStats(!showStats)}
               className="text-muted-foreground hover:text-foreground"
+              title="Toggle stats"
             >
               {showStats ? (
                 <Eye className="w-4 h-4" />
@@ -62,20 +136,28 @@ export default function Write() {
               )}
             </Button>
 
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setFocusMode(true)}
+              className="text-muted-foreground hover:text-foreground gap-2"
+              title="Focus mode"
+            >
+              <Focus className="w-4 h-4" />
+              <span className="hidden sm:inline">Focus</span>
+            </Button>
+
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button variant="ghost" size="sm" title="More options">
                   <MoreVertical className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>
+                <DropdownMenuItem onClick={() => saveDraft(title, content)}>
                   <Save className="w-4 h-4 mr-2" />
-                  Save
+                  Save Draft
                 </DropdownMenuItem>
-                <DropdownMenuItem>Export as PDF</DropdownMenuItem>
-                <DropdownMenuItem>Export as DOCX</DropdownMenuItem>
-                <DropdownMenuItem>Share</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -84,49 +166,50 @@ export default function Write() {
 
       {/* Main Editor Area */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Left Sidebar */}
-        <div className="hidden lg:flex flex-col w-64 border-r border-border/50 glass-effect-sm p-6 overflow-y-auto">
-          <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
-            Projects
-          </h3>
+        {/* Left Sidebar - Drafts */}
+        {showDrafts && (
+          <div className="lg:flex flex-col w-64 border-r border-border/50 glass-effect-sm p-6 overflow-y-auto">
+            <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Saved Drafts
+            </h3>
+            <DraftManager
+              drafts={drafts}
+              onLoad={handleLoadDraft}
+              onDelete={deleteDraft}
+            />
+          </div>
+        )}
 
-          <div className="space-y-2 mb-8">
-            <div className="p-3 rounded-lg glass-effect cursor-pointer hover:glass-effect-lg transition-all duration-300">
-              <p className="font-medium text-sm text-foreground">
-                Untitled Story
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Today at 10:30 AM
-              </p>
-            </div>
-
-            <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
-              <p className="font-medium text-sm text-foreground">
-                My First Novel
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">Yesterday</p>
-            </div>
-
-            <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
-              <p className="font-medium text-sm text-foreground">
-                Poetry Collection
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">3 days ago</p>
+        {!showDrafts && (
+          <div className="hidden lg:flex flex-col w-64 border-r border-border/50 glass-effect-sm p-6 overflow-y-auto">
+            <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
+              Writing Tips
+            </h3>
+            <div className="space-y-4 text-sm text-muted-foreground">
+              <div>
+                <p className="font-medium text-foreground mb-2">Focus Mode</p>
+                <p className="text-xs">Hide distractions and concentrate on your writing.</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-2">Writing Timer</p>
+                <p className="text-xs">Use Pomodoro technique: 25 min focus + 5 min break.</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-2">Export Options</p>
+                <p className="text-xs">Save your work as TXT, Markdown, or HTML.</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-2">Auto-Save</p>
+                <p className="text-xs">Drafts are saved automatically every 30 seconds.</p>
+              </div>
             </div>
           </div>
-
-          <Button
-            variant="outline"
-            className="w-full border-muted text-foreground hover:bg-muted/30 hover:border-primary/50 rounded-full font-semibold transition-all duration-300"
-          >
-            + New Project
-          </Button>
-        </div>
+        )}
 
         {/* Main Editor */}
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Formatting Toolbar */}
-          <div className="border-b border-border bg-background/50 backdrop-blur-md px-4 sm:px-6 py-3 flex items-center gap-2">
+          <div className="border-b border-border bg-background/50 backdrop-blur-md px-4 sm:px-6 py-3 flex items-center gap-2 flex-wrap">
             <Button
               variant="ghost"
               size="sm"
@@ -152,14 +235,31 @@ export default function Write() {
               <List className="w-4 h-4" />
             </Button>
 
+            <div className="h-6 border-l border-border/30 mx-1" />
+
+            <WritingTimer />
+            <WritingPrompt onInsert={handleInsertPrompt} />
+            <ExportMenu title={title} content={content} />
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setShowDrafts(!showDrafts)}
+              className="text-muted-foreground hover:text-foreground gap-2"
+              title="Drafts"
+            >
+              <FolderOpen className="w-4 h-4" />
+              <span className="hidden sm:inline">Drafts</span>
+            </Button>
+
             <div className="flex-1" />
 
             <Button
               size="sm"
+              onClick={() => saveDraft(title, content)}
               className="bg-primary hover:bg-blue-600 text-primary-foreground gap-2 rounded-lg font-semibold border-0 transition-all duration-300"
             >
               <Save className="w-4 h-4" />
-              <span className="hidden sm:inline">Save Draft</span>
+              <span className="hidden sm:inline">Save</span>
             </Button>
           </div>
 
