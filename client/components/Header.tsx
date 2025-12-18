@@ -16,14 +16,14 @@ export default function Header() {
   ];
 
   return (
-    <header className="border-b border-border bg-background/80 backdrop-blur-md">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+    <header className="border-b border-border bg-background/50 backdrop-blur-2xl sticky top-0 z-50">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-2 rounded-lg bg-primary group-hover:bg-primary/90 transition-colors">
+          <div className="p-2 rounded-xl bg-gradient-to-br from-primary to-secondary group-hover:shadow-lg group-hover:shadow-primary/50 transition-all duration-300">
             <PenTool className="w-5 h-5 text-primary-foreground" strokeWidth={3} />
           </div>
-          <span className="font-bold text-base text-foreground hidden sm:inline">
+          <span className="font-bold text-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hidden sm:inline">
             Wordcraft
           </span>
         </Link>
@@ -34,13 +34,16 @@ export default function Header() {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-medium transition-all duration-300 relative ${
                 isActive(link.href)
-                  ? "text-foreground"
+                  ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {link.label}
+              {isActive(link.href) && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary to-secondary" />
+              )}
             </Link>
           ))}
         </div>
@@ -51,7 +54,7 @@ export default function Header() {
             asChild
             variant="default"
             size="sm"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full font-semibold"
+            className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground rounded-full font-semibold border-0 transition-all duration-300"
           >
             <Link to="/write">Start</Link>
           </Button>
@@ -60,7 +63,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 hover:bg-secondary transition-colors rounded-lg"
+          className="md:hidden p-2 hover:bg-muted/30 transition-colors rounded-lg"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
@@ -73,7 +76,7 @@ export default function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border px-4 py-4 space-y-2">
+        <div className="md:hidden border-t border-border px-4 py-4 space-y-2 backdrop-blur-md">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -81,14 +84,14 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`block px-3 py-2 rounded-lg font-medium transition-colors ${
                 isActive(link.href)
-                  ? "bg-secondary text-foreground"
-                  : "text-foreground hover:bg-secondary"
+                  ? "bg-muted text-primary"
+                  : "text-foreground hover:bg-muted/50"
               }`}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="w-full mt-2 rounded-full">
+          <Button asChild size="sm" className="w-full mt-2 rounded-full bg-gradient-to-r from-primary to-secondary border-0">
             <Link to="/write">Start Writing</Link>
           </Button>
         </div>
