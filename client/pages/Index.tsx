@@ -63,58 +63,58 @@ export default function Index() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <h2 className="text-4xl font-bold text-foreground mb-16 text-center">Powerful Writing Tools</h2>
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Feature 1 - Purple */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-gradient-to-br from-slate-800 via-slate-800/50 to-slate-900 border-2 border-purple-500/30 hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 border border-purple-400/30 group-hover:border-purple-300/60 mb-6 transition-all duration-300 group-hover:rotate-slow">
-              <Feather className="w-8 h-8" style={{ color: "#817395" }} strokeWidth={1.5} />
+          {/* Feature 1 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:rotate-slow">
+              <Feather className="w-8 h-8 text-white" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-3">
+            <h3 className="text-2xl font-semibold text-white mb-3">
               Distraction-free
             </h3>
-            <p className="text-base text-muted-foreground font-light leading-relaxed">
+            <p className="text-base text-white/60 font-light leading-relaxed">
               A minimal interface that gets out of your way. Focus mode hides everything except your words.
             </p>
           </div>
 
-          {/* Feature 2 - Blue */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-gradient-to-br from-slate-800 via-slate-800/50 to-slate-900 border-2 border-blue-400/30 hover:border-blue-400/60 hover:shadow-2xl hover:shadow-blue-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-400/30 group-hover:border-blue-300/60 mb-6 transition-all duration-300 group-hover:animate-shimmer">
-              <BarChart3 className="w-8 h-8" style={{ color: "#91b2c7" }} strokeWidth={1.5} />
+          {/* Feature 2 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:animate-shimmer">
+              <BarChart3 className="w-8 h-8 text-white" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-3">
+            <h3 className="text-2xl font-semibold text-white mb-3">
               Track progress
             </h3>
-            <p className="text-base text-muted-foreground font-light leading-relaxed">
+            <p className="text-base text-white/60 font-light leading-relaxed">
               Real-time word counts, reading time estimates, and writing streaks to keep you motivated.
             </p>
           </div>
 
-          {/* Feature 3 - Teal */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-gradient-to-br from-slate-800 via-slate-800/50 to-slate-900 border-2 border-teal-400/30 hover:border-teal-400/60 hover:shadow-2xl hover:shadow-teal-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/10 border border-teal-400/30 group-hover:border-teal-300/60 mb-6 transition-all duration-300 group-hover:bounce-subtle">
-              <Zap className="w-8 h-8" style={{ color: "#789cac" }} strokeWidth={1.5} />
+          {/* Feature 3 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:bounce-subtle">
+              <Zap className="w-8 h-8 text-white" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-3">
+            <h3 className="text-2xl font-semibold text-white mb-3">
               Smart tools
             </h3>
-            <p className="text-base text-muted-foreground font-light leading-relaxed">
+            <p className="text-base text-white/60 font-light leading-relaxed">
               Pomodoro timer, writing prompts, and auto-save all your drafts automatically.
             </p>
           </div>
 
-          {/* Feature 4 - Slate */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-4 bg-gradient-to-br from-slate-800 via-slate-800/50 to-slate-900 border-2 border-slate-500/30 hover:border-slate-400/60 hover:shadow-2xl hover:shadow-slate-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-500/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-gradient-to-br from-slate-500/20 to-slate-600/10 border border-slate-400/30 group-hover:border-slate-300/60 mb-6 transition-all duration-300">
-              <Users className="w-8 h-8" style={{ color: "#6c7c80" }} strokeWidth={1.5} />
+          {/* Feature 4 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-4 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300">
+              <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
             </div>
-            <h3 className="text-2xl font-semibold text-foreground mb-3">
+            <h3 className="text-2xl font-semibold text-white mb-3">
               Export anywhere
             </h3>
-            <p className="text-base text-muted-foreground font-light leading-relaxed">
+            <p className="text-base text-white/60 font-light leading-relaxed">
               Download as TXT, Markdown, or HTML. Share your stories with the world.
             </p>
           </div>
@@ -129,33 +129,33 @@ export default function Index() {
       {/* Social Proof Section */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Stat 1 - Purple */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-gradient-to-br from-purple-900/40 to-slate-900 border-2 border-purple-500/40 hover:border-purple-400/70 hover:shadow-2xl hover:shadow-purple-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10" style={{ color: "#817395" }}>
+          {/* Stat 1 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
               50K+
             </p>
-            <p className="text-muted-foreground font-light relative z-10">
+            <p className="text-white/60 font-light relative z-10">
               Writers using Wordcraft
             </p>
           </div>
 
-          {/* Stat 2 - Blue */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-gradient-to-br from-blue-900/40 to-slate-900 border-2 border-blue-400/40 hover:border-blue-400/70 hover:shadow-2xl hover:shadow-blue-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10" style={{ color: "#91b2c7" }}>
+          {/* Stat 2 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
               2B+
             </p>
-            <p className="text-muted-foreground font-light relative z-10">Words written</p>
+            <p className="text-white/60 font-light relative z-10">Words written</p>
           </div>
 
-          {/* Stat 3 - Teal */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-gradient-to-br from-teal-900/40 to-slate-900 border-2 border-teal-400/40 hover:border-teal-400/70 hover:shadow-2xl hover:shadow-teal-500/20">
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10" style={{ color: "#789cac" }}>
+          {/* Stat 3 */}
+          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
               98%
             </p>
-            <p className="text-muted-foreground font-light relative z-10">
+            <p className="text-white/60 font-light relative z-10">
               User satisfaction
             </p>
           </div>
@@ -169,12 +169,12 @@ export default function Index() {
 
       {/* Always Free Section */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center relative z-10">
-        <div className="group relative overflow-hidden p-12 rounded-3xl interactive-card fade-in-up pulse-glow bg-gradient-to-br from-purple-900/30 via-slate-800/50 to-teal-900/30 border-2 border-purple-500/40 hover:border-purple-400/70 hover:shadow-2xl hover:shadow-purple-500/30">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-teal-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 glow-pulse relative z-10">
+        <div className="group relative overflow-hidden p-12 rounded-3xl interactive-card fade-in-up pulse-glow bg-black border-2 border-white/30 hover:border-white/60 hover:shadow-2xl hover:shadow-white/20">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glow-pulse relative z-10">
             Always free
           </h2>
-          <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto leading-relaxed relative z-10">
+          <p className="text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed relative z-10">
             No hidden fees. No premium tiers. No paywalls. Wordcraft is free
             forever, with all features available to everyone.
           </p>
@@ -182,7 +182,7 @@ export default function Index() {
           <Button
             asChild
             size="lg"
-            className="bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-700 hover:via-purple-600 hover:to-purple-700 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105 active:scale-95 relative z-10"
+            className="bg-white hover:bg-gray-100 text-black text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 relative z-10"
           >
             <Link to="/write">Get Started</Link>
           </Button>
