@@ -7,94 +7,94 @@
 
 @layer base {
   /**
-   * Tailwind CSS theme - Writing App
+   * Tailwind CSS theme - Writing App (Apple-inspired)
    * tailwind.config.ts expects the following color variables to be expressed as HSL values.
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 99%;
-    --foreground: 223 20% 18%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
     --card: 0 0% 100%;
-    --card-foreground: 223 20% 18%;
+    --card-foreground: 0 0% 0%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 223 20% 18%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 201 89% 35%;
+    --primary: 255 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 36 80% 58%;
-    --secondary-foreground: 223 20% 18%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 220 13% 91%;
-    --muted-foreground: 215 15% 47%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 201 89% 35%;
+    --accent: 255 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 201 89% 35%;
+    --border: 0 0% 92%;
+    --input: 0 0% 96%;
+    --ring: 255 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
-    --sidebar-foreground: 223 20% 18%;
+    --sidebar-foreground: 0 0% 0%;
 
-    --sidebar-primary: 201 89% 35%;
+    --sidebar-primary: 255 100% 50%;
 
     --sidebar-primary-foreground: 0 0% 100%;
 
-    --sidebar-accent: 36 80% 58%;
+    --sidebar-accent: 0 0% 95%;
 
-    --sidebar-accent-foreground: 223 20% 18%;
+    --sidebar-accent-foreground: 0 0% 0%;
 
-    --sidebar-border: 220 13% 91%;
+    --sidebar-border: 0 0% 92%;
 
-    --sidebar-ring: 201 89% 35%;
+    --sidebar-ring: 255 100% 50%;
   }
 
   .dark {
-    --background: 223 20% 12%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
 
-    --card: 223 20% 18%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 223 20% 18%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 201 89% 50%;
-    --primary-foreground: 223 20% 18%;
+    --primary: 255 100% 60%;
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 36 80% 58%;
-    --secondary-foreground: 223 20% 18%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 223 13% 35%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 201 89% 50%;
-    --accent-foreground: 223 20% 18%;
+    --accent: 255 100% 60%;
+    --accent-foreground: 0 0% 0%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 223 13% 28%;
-    --input: 223 13% 28%;
-    --ring: 201 89% 50%;
-    --sidebar-background: 223 20% 12%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 201 89% 50%;
-    --sidebar-primary-foreground: 223 20% 18%;
-    --sidebar-accent: 36 80% 58%;
-    --sidebar-accent-foreground: 223 20% 18%;
-    --sidebar-border: 223 13% 28%;
-    --sidebar-ring: 201 89% 50%;
+    --border: 0 0% 18%;
+    --input: 0 0% 14%;
+    --ring: 255 100% 60%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 255 100% 60%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 255 100% 60%;
   }
 }
 
