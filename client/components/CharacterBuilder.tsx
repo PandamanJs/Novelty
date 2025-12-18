@@ -43,23 +43,22 @@ export function CharacterBuilder({ onInsert }: CharacterBuilderProps) {
   if (!isOpen) {
     return (
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
         onClick={() => setIsOpen(true)}
-        className="text-muted-foreground hover:text-foreground gap-2"
+        className="w-full justify-start text-gray-600 hover:text-black hover:bg-gray-100"
       >
-        <Users className="w-4 h-4" />
-        <span className="hidden sm:inline">Characters</span>
+        <span>View Characters</span>
       </Button>
     );
   }
 
   return (
-    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-border bg-background max-h-96 overflow-y-auto slide-in-right">
+    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-gray-200 bg-white max-h-96 overflow-y-auto fade-in-up">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <Users className="w-5 h-5" style={{ color: "#789cac" }} />
-          <h3 className="font-semibold text-foreground">Characters</h3>
+          <Users className="w-5 h-5" style={{ color: "#0071e3" }} />
+          <h3 className="font-semibold text-black">Characters</h3>
         </div>
         <Button
           variant="ghost"

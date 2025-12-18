@@ -16,28 +16,28 @@ export default function Header() {
   ];
 
   return (
-    <header className="glass-effect-sm fixed top-0 w-full z-50 border-b border-border/50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-          <div className="p-2.5 rounded-lg glass-effect group-hover:glass-effect-lg transition-all duration-300 border border-purple-500/20">
-            <PenTool className="w-5 h-5 color-primary" strokeWidth={2.5} />
+    <header className="fixed top-0 w-full z-50 border-b border-gray-200 bg-white/95 backdrop-blur-lg">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        {/* Logo - Apple minimal */}
+        <Link to="/" className="flex items-center gap-2 group hover:opacity-70 transition-opacity">
+          <div className="p-2 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300">
+            <PenTool className="w-5 h-5 text-blue-600" strokeWidth={2} />
           </div>
-          <span className="font-semibold text-base text-foreground hidden sm:inline">
-            Wordcraft
+          <span className="font-semibold text-base text-black hidden sm:inline">
+            Novelty
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop Navigation - Apple minimal */}
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
-              className={`px-3 py-2 text-sm font-medium rounded-lg transition-all duration-300 ${
+              className={`text-sm font-medium transition-colors duration-300 ${
                 isActive(link.href)
-                  ? "color-primary glass-effect border border-purple-500/20"
-                  : "text-muted-foreground hover:text-secondary hover:glass-effect-sm"
+                  ? "text-black"
+                  : "text-gray-600 hover:text-black"
               }`}
             >
               {link.label}
@@ -45,43 +45,43 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTA - Apple minimal */}
         <div className="hidden md:flex items-center gap-3">
           <Button
             asChild
             size="sm"
-            className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white rounded-lg font-semibold border-0 transition-all duration-300 px-5"
+            className="btn-apple px-5 py-2 rounded-full font-medium text-sm"
           >
-            <Link to="/write">Start</Link>
+            <Link to="/write">Start Writing</Link>
           </Button>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Apple minimal */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 hover:glass-effect rounded-lg transition-all duration-300"
+          className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors duration-300"
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
-            <X className="w-5 h-5" />
+            <X className="w-5 h-5 text-black" />
           ) : (
-            <Menu className="w-5 h-5" />
+            <Menu className="w-5 h-5 text-black" />
           )}
         </button>
       </nav>
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden glass-effect-lg border-t border-border/50 px-4 py-4 space-y-2">
+        <div className="md:hidden border-t border-gray-200 bg-white px-4 py-4 space-y-2">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               to={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`block px-3 py-2 rounded-lg font-medium transition-all duration-300 ${
+              className={`block px-3 py-2 rounded-lg font-medium text-sm transition-colors duration-300 ${
                 isActive(link.href)
-                  ? "glass-effect text-primary"
-                  : "text-foreground hover:glass-effect-sm"
+                  ? "text-black bg-gray-50"
+                  : "text-gray-600 hover:text-black hover:bg-gray-50"
               }`}
             >
               {link.label}
@@ -90,7 +90,7 @@ export default function Header() {
           <Button
             asChild
             size="sm"
-            className="w-full mt-2 rounded-lg bg-primary hover:bg-blue-600 text-primary-foreground border-0"
+            className="w-full mt-4 btn-apple rounded-full text-sm font-medium"
           >
             <Link to="/write">Start Writing</Link>
           </Button>

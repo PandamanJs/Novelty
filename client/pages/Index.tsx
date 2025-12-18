@@ -1,300 +1,204 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
-import { Feather, BarChart3, Users, Zap, Sparkles } from "lucide-react";
+import { Feather, BarChart3, Users, Zap, BookOpen } from "lucide-react";
 
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background pt-16 overflow-hidden">
+    <div className="min-h-screen bg-white text-black pt-16">
       <Header />
-
-      {/* Animated background elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-full blur-3xl animate-float pulse-glow" />
-        <div className="absolute bottom-32 left-10 w-96 h-96 bg-gradient-to-tr from-blue-500/15 to-cyan-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-slate-500/10 to-purple-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
-      </div>
-
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
+      {/* Hero Section - Apple Style */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-6 text-sm color-secondary slide-in-left">
-            <Sparkles className="w-4 h-4 rotate-slow" />
-            <span>Craft beautiful stories</span>
+          {/* Subtle badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6 fade-in-up">
+            ✨ The elegant way to write
           </div>
           
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6 tracking-tight bg-gradient-to-r from-purple-300 via-foreground to-cyan-300 bg-clip-text text-transparent fade-in-up glow-pulse">
-            Write your
-            <br />
-            story
+          {/* Hero heading - clean and simple */}
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-black leading-tight mb-6 fade-in-up" style={{ animationDelay: '0.1s' }}>
+            Write with purpose
           </h1>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed mb-12 max-w-2xl">
-            A beautiful, distraction-free platform for writers. Whether it's a
-            novel, blog, poem, or short story—Wordcraft gives you everything you
-            need to create and share.
+          
+          {/* Subheading */}
+          <p className="text-lg sm:text-xl text-gray-600 font-normal leading-relaxed mb-12 max-w-2xl fade-in-up" style={{ animationDelay: '0.2s' }}>
+            A distraction-free writing platform built for authors, bloggers, and storytellers. Beautiful, simple, and free.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 fade-in-up" style={{ animationDelay: '0.2s' }}>
+          {/* CTA Buttons - Apple style */}
+          <div className="flex flex-col sm:flex-row gap-4 fade-in-up" style={{ animationDelay: '0.3s' }}>
             <Button
               asChild
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              className="btn-apple px-8 py-3 text-base font-medium rounded-full"
             >
-              <Link to="/write">Start Writing</Link>
+              <Link to="/write">Get Started</Link>
             </Button>
+            
             <Button
               asChild
-              variant="outline"
-              size="lg"
-              className="glass-effect color-secondary text-base px-8 py-6 rounded-2xl font-semibold transition-all duration-300 hover:glass-effect-lg border-cyan-500/20 hover:scale-105 active:scale-95"
+              className="btn-secondary px-8 py-3 text-base font-medium rounded-full"
             >
-              <Link to="/projects">See Projects</Link>
+              <Link to="/projects">Explore</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 via-blue-500/30 to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-gray-200" />
       </div>
 
-      {/* Features Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
-        <h2 className="text-4xl font-bold text-foreground mb-16 text-center">Powerful Writing Tools</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+      {/* Features Section - Simple Grid */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-black mb-4">Everything you need</h2>
+          <p className="text-lg text-gray-600">Thoughtfully designed features to help you write better</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-12">
           {/* Feature 1 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:rotate-slow">
-              <Feather className="w-8 h-8 text-white" strokeWidth={1.5} />
+          <div className="fade-in-up stagger-1">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-lg bg-blue-50 flex-shrink-0">
+                <Feather className="w-6 h-6 text-blue-600" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">Distraction-free</h3>
+                <p className="text-gray-600">Clean, minimal interface. Focus on what matters—your words.</p>
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-3">
-              Distraction-free
-            </h3>
-            <p className="text-base text-white/60 font-light leading-relaxed">
-              A minimal interface that gets out of your way. Focus mode hides everything except your words.
-            </p>
           </div>
 
           {/* Feature 2 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:animate-shimmer">
-              <BarChart3 className="w-8 h-8 text-white" strokeWidth={1.5} />
+          <div className="fade-in-up stagger-2">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-lg bg-green-50 flex-shrink-0">
+                <BarChart3 className="w-6 h-6 text-green-600" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">Smart insights</h3>
+                <p className="text-gray-600">Word counts, reading time, and readability scores in real-time.</p>
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-3">
-              Track progress
-            </h3>
-            <p className="text-base text-white/60 font-light leading-relaxed">
-              Real-time word counts, reading time estimates, and writing streaks to keep you motivated.
-            </p>
           </div>
 
           {/* Feature 3 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300 group-hover:bounce-subtle">
-              <Zap className="w-8 h-8 text-white" strokeWidth={1.5} />
+          <div className="fade-in-up stagger-3">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-lg bg-orange-50 flex-shrink-0">
+                <Zap className="w-6 h-6 text-orange-600" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">Powerful tools</h3>
+                <p className="text-gray-600">Character arcs, plot tracking, and writing prompts included.</p>
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-3">
-              Smart tools
-            </h3>
-            <p className="text-base text-white/60 font-light leading-relaxed">
-              Pomodoro timer, writing prompts, and auto-save all your drafts automatically.
-            </p>
           </div>
 
           {/* Feature 4 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-4 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="p-4 w-fit rounded-2xl bg-white/10 border border-white/20 group-hover:border-white/40 mb-6 transition-all duration-300">
-              <Users className="w-8 h-8 text-white" strokeWidth={1.5} />
+          <div className="fade-in-up stagger-4">
+            <div className="flex items-start gap-4">
+              <div className="p-3 rounded-lg bg-purple-50 flex-shrink-0">
+                <BookOpen className="w-6 h-6 text-purple-600" strokeWidth={1.5} />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-black mb-2">Export anywhere</h3>
+                <p className="text-gray-600">Download as PDF, Markdown, or HTML. Share with the world.</p>
+              </div>
             </div>
-            <h3 className="text-2xl font-semibold text-white mb-3">
-              Export anywhere
-            </h3>
-            <p className="text-base text-white/60 font-light leading-relaxed">
-              Download as TXT, Markdown, or HTML. Share your stories with the world.
-            </p>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-gray-200" />
       </div>
 
-      {/* Social Proof Section */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 relative z-10">
+      {/* Stats Section */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Stat 1 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-1 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
-              50K+
-            </p>
-            <p className="text-white/60 font-light relative z-10">
-              Writers using Wordcraft
-            </p>
+          <div className="text-center fade-in-up stagger-1">
+            <p className="text-4xl sm:text-5xl font-bold text-black mb-2">50K+</p>
+            <p className="text-gray-600">Writers worldwide</p>
           </div>
 
           {/* Stat 2 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-2 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
-              2B+
-            </p>
-            <p className="text-white/60 font-light relative z-10">Words written</p>
+          <div className="text-center fade-in-up stagger-2">
+            <p className="text-4xl sm:text-5xl font-bold text-black mb-2">2B+</p>
+            <p className="text-gray-600">Words written</p>
           </div>
 
           {/* Stat 3 */}
-          <div className="group relative overflow-hidden p-8 rounded-3xl transition-all duration-300 interactive-card fade-in-up stagger-3 bg-black border border-white/20 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <p className="text-4xl sm:text-5xl font-bold mb-2 group-hover:glow-pulse relative z-10 text-white">
-              98%
-            </p>
-            <p className="text-white/60 font-light relative z-10">
-              User satisfaction
-            </p>
+          <div className="text-center fade-in-up stagger-3">
+            <p className="text-4xl sm:text-5xl font-bold text-black mb-2">98%</p>
+            <p className="text-gray-600">User satisfaction</p>
           </div>
         </div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-gray-200" />
       </div>
 
-      {/* Always Free Section */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center relative z-10">
-        <div className="group relative overflow-hidden p-12 rounded-3xl interactive-card fade-in-up pulse-glow bg-black border-2 border-white/30 hover:border-white/60 hover:shadow-2xl hover:shadow-white/20">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 glow-pulse relative z-10">
-            Always free
-          </h2>
-          <p className="text-xl text-white/60 font-light mb-12 max-w-2xl mx-auto leading-relaxed relative z-10">
-            No hidden fees. No premium tiers. No paywalls. Wordcraft is free
-            forever, with all features available to everyone.
-          </p>
+      {/* CTA Section - Apple style */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-32 text-center">
+        <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">Always free</h2>
+        <p className="text-xl text-gray-600 font-normal mb-12 max-w-2xl mx-auto">
+          No subscriptions. No paywalls. No hidden fees. Novelty is completely free for everyone, forever.
+        </p>
 
-          <Button
-            asChild
-            size="lg"
-            className="bg-white hover:bg-gray-100 text-black text-base px-8 py-6 rounded-2xl font-semibold border-0 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-white/30 hover:scale-105 active:scale-95 relative z-10"
-          >
-            <Link to="/write">Get Started</Link>
-          </Button>
-        </div>
+        <Button
+          asChild
+          className="btn-apple px-8 py-3 text-base font-medium rounded-full"
+        >
+          <Link to="/write">Start Writing Now</Link>
+        </Button>
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-gray-200" />
       </div>
 
-      {/* Footer */}
+      {/* Footer - Apple minimal */}
       <footer className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div>
-            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
-              Product
-            </p>
+            <p className="font-semibold text-gray-900 mb-6 text-sm uppercase tracking-wide opacity-70">Product</p>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  to="/write"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Writing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/projects"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Projects
-                </Link>
-              </li>
+              <li><Link to="/write" className="text-gray-600 hover:text-black transition-colors">Write</Link></li>
+              <li><Link to="/projects" className="text-gray-600 hover:text-black transition-colors">Projects</Link></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
-              Company
-            </p>
+            <p className="font-semibold text-gray-900 mb-6 text-sm uppercase tracking-wide opacity-70">Company</p>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Blog
-                </Link>
-              </li>
+              <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">About</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">Blog</Link></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
-              Legal
-            </p>
+            <p className="font-semibold text-gray-900 mb-6 text-sm uppercase tracking-wide opacity-70">Legal</p>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Privacy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Terms
-                </Link>
-              </li>
+              <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">Privacy</Link></li>
+              <li><Link to="/" className="text-gray-600 hover:text-black transition-colors">Terms</Link></li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
-              Social
-            </p>
+            <p className="font-semibold text-gray-900 mb-6 text-sm uppercase tracking-wide opacity-70">Connect</p>
             <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
-                >
-                  Instagram
-                </a>
-              </li>
+              <li><a href="#" className="text-gray-600 hover:text-black transition-colors">Twitter</a></li>
+              <li><a href="#" className="text-gray-600 hover:text-black transition-colors">GitHub</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-border/50 pt-12">
-          <p className="text-sm text-muted-foreground text-center">
-            &copy; 2024 Wordcraft. All rights reserved.
-          </p>
+        <div className="border-t border-gray-200 pt-12">
+          <p className="text-sm text-gray-600 text-center">© 2024 Novelty. All rights reserved.</p>
         </div>
       </footer>
     </div>

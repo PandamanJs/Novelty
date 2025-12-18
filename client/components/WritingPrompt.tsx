@@ -48,23 +48,22 @@ export function WritingPrompt({ onInsert }: WritingPromptProps) {
   if (!isOpen) {
     return (
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
         onClick={() => setIsOpen(true)}
-        className="text-muted-foreground hover:text-foreground gap-2"
+        className="w-full justify-start text-gray-600 hover:text-black hover:bg-gray-100"
       >
-        <Lightbulb className="w-4 h-4" />
-        <span className="hidden sm:inline">Prompt</span>
+        <span>Get Prompt</span>
       </Button>
     );
   }
 
   return (
-    <Card className="absolute top-full mt-2 right-0 w-80 p-4 z-50 shadow-lg border border-border bg-background slide-in-right">
+    <Card className="absolute top-full mt-2 right-0 w-80 p-4 z-50 shadow-lg border border-gray-200 bg-white fade-in-up">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-2">
           <Lightbulb className="w-5 h-5 text-yellow-500" />
-          <h3 className="font-semibold text-foreground">Writing Prompt</h3>
+          <h3 className="font-semibold text-black">Writing Prompt</h3>
         </div>
         <Button
           variant="ghost"
@@ -76,7 +75,7 @@ export function WritingPrompt({ onInsert }: WritingPromptProps) {
         </Button>
       </div>
 
-      <p className="text-sm text-muted-foreground mb-4 leading-relaxed italic animate-shimmer">
+      <p className="text-sm text-gray-600 mb-4 leading-relaxed italic fade-in">
         "{currentPrompt}"
       </p>
 

@@ -18,12 +18,11 @@ export function ExportMenu({ title, content }: ExportMenuProps) {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
-          variant="outline"
+          variant="ghost"
           size="sm"
-          className="text-muted-foreground hover:text-foreground gap-2"
+          className="w-full justify-start text-muted-foreground hover:text-foreground hover:bg-secondary/40"
         >
-          <Download className="w-4 h-4" />
-          <span className="hidden sm:inline">Export</span>
+          <span>Export as...</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">

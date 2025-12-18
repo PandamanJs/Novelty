@@ -47,21 +47,21 @@ export function WritingTimer({ onComplete }: WritingTimerProps) {
   if (!isExpanded) {
     return (
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
         onClick={() => setIsExpanded(true)}
-        className="text-muted-foreground hover:text-foreground gap-2"
+        className="w-full justify-start text-gray-600 hover:text-black hover:bg-gray-100"
       >
-        <Clock className="w-4 h-4" />
-        <span className="hidden sm:inline">{formatTime}</span>
+        <Clock className="w-4 h-4 mr-2" />
+        <span className="font-mono">{formatTime}</span>
       </Button>
     );
   }
 
   return (
-    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border flip-in">
-      <Clock className={`w-4 h-4 text-muted-foreground ${isRunning ? 'animate-pulse' : ''}`} />
-      <span className={`text-sm font-mono font-semibold text-foreground ${isRunning ? 'glow-pulse' : ''}`}>
+    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 border border-gray-200 fade-in-up">
+      <Clock className={`w-4 h-4 text-gray-600 ${isRunning ? 'animate-pulse' : ''}`} />
+      <span className={`text-sm font-mono font-semibold text-black ${isRunning ? '' : ''}`}>
         {formatTime}
       </span>
       <Button

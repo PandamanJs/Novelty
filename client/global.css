@@ -1,5 +1,5 @@
 /** @import must precede all other statements */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -7,100 +7,100 @@
 
 @layer base {
   /**
-   * Wordcraft Color System - Custom Palette
-   * #e8e3d6 (cream), #91b2c7 (blue-gray), #789cac (slate-blue)
-   * #6c7c80 (slate), #645e6f (mauve), #817395 (purple)
+   * Apple Design System - Clean, Minimalist
+   * Light background (#ffffff), black text (#000000), subtle grays
+   * Accent: Blue (#0071e3) for interactive elements
   */
   :root {
-    /* Neutral Foundation */
-    --background: 40 15% 8%;
-    --foreground: 40 20% 92%;
+    /* Neutral Foundation - Apple Light */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
-    --card: 40 12% 14%;
-    --card-foreground: 40 20% 92%;
+    --card: 0 0% 97%;
+    --card-foreground: 0 0% 0%;
 
-    --popover: 40 12% 14%;
-    --popover-foreground: 40 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    /* Primary Color - Purple #817395 */
-    --primary: 285 15% 52%;
-    --primary-foreground: 40 15% 8%;
+    /* Primary Color - Apple Blue */
+    --primary: 210 100% 44%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Secondary Color - Blue-gray #91b2c7 */
-    --secondary: 200 20% 70%;
-    --secondary-foreground: 40 15% 8%;
+    /* Secondary Color - Light Gray */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 0%;
 
-    /* Tertiary - Slate-blue #789cac */
-    --tertiary: 200 18% 62%;
-    --tertiary-foreground: 40 20% 92%;
+    /* Tertiary - Medium Gray */
+    --tertiary: 0 0% 86%;
+    --tertiary-foreground: 0 0% 0%;
 
     /* Muted - For secondary content */
-    --muted: 200 12% 32%;
-    --muted-foreground: 200 10% 60%;
+    --muted: 0 0% 60%;
+    --muted-foreground: 0 0% 60%;
 
-    /* Accent - Cream #e8e3d6 */
-    --accent: 40 30% 85%;
-    --accent-foreground: 40 15% 8%;
+    /* Accent - Red */
+    --accent: 0 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     /* Semantic Colors */
-    --success: 140 60% 50%;
-    --warning: 35 85% 55%;
-    --error: 0 75% 55%;
+    --success: 140 71% 46%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
 
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 40 20% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
     /* Borders and Inputs */
-    --border: 200 15% 22%;
-    --input: 40 12% 16%;
-    --ring: 285 15% 52%;
+    --border: 0 0% 85%;
+    --input: 0 0% 95%;
+    --ring: 210 100% 44%;
 
-    --radius: 1.125rem;
+    --radius: 0.75rem;
 
     /* Sidebar */
-    --sidebar-background: 40 12% 10%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 285 15% 52%;
-    --sidebar-primary-foreground: 40 15% 8%;
-    --sidebar-accent: 200 20% 70%;
-    --sidebar-accent-foreground: 40 15% 8%;
-    --sidebar-border: 200 15% 22%;
-    --sidebar-ring: 285 15% 52%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 210 100% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 210 100% 44%;
   }
 
   .dark {
-    --background: 40 15% 8%;
-    --foreground: 40 20% 92%;
-    --card: 40 12% 14%;
-    --card-foreground: 40 20% 92%;
-    --popover: 40 12% 14%;
-    --popover-foreground: 40 20% 92%;
-    --primary: 285 15% 52%;
-    --primary-foreground: 40 15% 8%;
-    --secondary: 200 20% 70%;
-    --secondary-foreground: 40 15% 8%;
-    --tertiary: 200 18% 62%;
-    --tertiary-foreground: 40 20% 92%;
-    --muted: 200 12% 32%;
-    --muted-foreground: 200 10% 60%;
-    --accent: 40 30% 85%;
-    --accent-foreground: 40 15% 8%;
-    --success: 140 60% 50%;
-    --warning: 35 85% 55%;
-    --error: 0 75% 55%;
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 40 20% 92%;
-    --border: 200 15% 22%;
-    --input: 40 12% 16%;
-    --ring: 285 15% 52%;
-    --sidebar-background: 40 12% 10%;
-    --sidebar-foreground: 40 20% 92%;
-    --sidebar-primary: 285 15% 52%;
-    --sidebar-primary-foreground: 40 15% 8%;
-    --sidebar-accent: 200 20% 70%;
-    --sidebar-accent-foreground: 40 15% 8%;
-    --sidebar-border: 200 15% 22%;
-    --sidebar-ring: 285 15% 52%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 98%;
+    --tertiary: 0 0% 28%;
+    --tertiary-foreground: 0 0% 98%;
+    --muted: 0 0% 45%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --success: 140 71% 46%;
+    --warning: 38 92% 50%;
+    --error: 0 84% 60%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 210 100% 50%;
+    --sidebar-background: 0 0% 11%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 210 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 210 100% 50%;
   }
 }
 
@@ -111,16 +111,14 @@
 
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(
-      135deg,
-      hsl(40 15% 8%) 0%,
-      hsl(200 18% 12%) 25%,
-      hsl(285 12% 11%) 50%,
-      hsl(200 15% 12%) 75%,
-      hsl(40 15% 8%) 100%
-    );
-    background-attachment: fixed;
+    background-color: hsl(0 0% 100%);
     min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Sora', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
@@ -134,93 +132,157 @@
     white-space: pre;
   }
 
-  /* Liquid Glass Effect - Color-aware transparency */
+  /* Apple Clean Button */
+  .btn-apple {
+    background: hsl(210 100% 44%);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-apple:hover {
+    background: hsl(210 100% 38%);
+    transform: scale(1.02);
+  }
+
+  .btn-apple:active {
+    transform: scale(0.98);
+  }
+
+  .btn-apple:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Apple Secondary Button */
+  .btn-secondary {
+    background: hsl(0 0% 94%);
+    color: hsl(0 0% 0%);
+    border: 1px solid hsl(0 0% 85%);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background: hsl(0 0% 88%);
+    border-color: hsl(0 0% 75%);
+  }
+
+  /* Apple Card */
+  .card-apple {
+    background: hsl(0 0% 100%);
+    border: 1px solid hsl(0 0% 85%);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .card-apple:hover {
+    border-color: hsl(0 0% 75%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Glass Morphism - Subtle Version */
   .glass-effect {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.08),
-      rgba(255, 255, 255, 0.02)
-    );
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 
-      0 8px 32px rgba(0, 0, 0, 0.1),
-      inset 0 1px 1px rgba(255, 255, 255, 0.1),
-      0 0 1px rgba(270, 85%, 55%, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
   }
 
   .glass-effect:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.12),
-      rgba(255, 255, 255, 0.04)
-    );
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 
-      0 12px 48px rgba(0, 0, 0, 0.15),
-      inset 0 1px 1px rgba(255, 255, 255, 0.15),
-      0 0 2px rgba(270, 85%, 55%, 0.2);
-  }
-
-  .glass-effect-sm {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.04),
-      rgba(255, 255, 255, 0.01)
-    );
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-color: rgba(0, 0, 0, 0.15);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
+  .glass-effect-sm {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 0.5rem;
+  }
+
   .glass-effect-lg {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.03)
-    );
-    backdrop-filter: blur(32px);
-    -webkit-backdrop-filter: blur(32px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-      0 16px 64px rgba(0, 0, 0, 0.2),
-      inset 0 1px 1px rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Color Utility Classes - Visual Hierarchy */
-  .color-primary {
-    color: hsl(270 85% 55%);
+  /* Apple Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
   }
 
-  .color-secondary {
-    color: hsl(190 80% 50%);
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
   }
 
-  .color-accent {
-    color: hsl(38 95% 52%);
+  h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
   }
 
-  .color-success {
-    color: hsl(140 70% 45%);
+  h3 {
+    font-size: 1.25rem;
   }
 
-  .color-error {
-    color: hsl(0 84% 55%);
+  p {
+    line-height: 1.6;
+    color: hsl(0 0% 40%);
   }
 
-  /* Apple blue accent text */
-  .text-primary {
-    color: hsl(207 100% 50%);
+  a {
+    color: hsl(210 100% 44%);
+    text-decoration: none;
+    transition: color 0.2s ease;
   }
 
-  /* Smooth fade-in animation */
+  a:hover {
+    color: hsl(210 100% 38%);
+  }
+
+  /* Apple Input Styling */
+  input, textarea, select {
+    background: hsl(0 0% 97%);
+    border: 1px solid hsl(0 0% 85%);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    letter-spacing: -0.01em;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: hsl(210 100% 44%);
+    box-shadow: 0 0 0 3px rgba(0, 112, 227, 0.1);
+    background: white;
+  }
+
+  /* Apple Animation - Smooth Fade */
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(12px);
     }
     to {
       opacity: 1;
@@ -228,86 +290,16 @@
     }
   }
 
-  .fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-  }
-
-  /* Smooth scale animation */
-  @keyframes scaleIn {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: scale(0.95);
     }
     to {
       opacity: 1;
-      transform: scale(1);
     }
   }
 
-  .scale-in {
-    animation: scaleIn 0.6s ease-out forwards;
-  }
-
-  /* Floating animation */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  /* Gradient pulse */
-  @keyframes gradientShift {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-  }
-
-  .animate-gradient-shift {
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
-  }
-
-  /* Alive Animations - Interactive & Dynamic */
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 0.3;
-      box-shadow: 0 0 20px rgba(129, 115, 149, 0.3);
-    }
-    50% {
-      opacity: 0.6;
-      box-shadow: 0 0 40px rgba(129, 115, 149, 0.6);
-    }
-  }
-
-  @keyframes shimmer {
-    0% {
-      background-position: -1000px 0;
-    }
-    100% {
-      background-position: 1000px 0;
-    }
-  }
-
-  @keyframes bounce-subtle {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-4px);
-    }
-  }
-
-  @keyframes slide-in-right {
+  @keyframes slideInRight {
     from {
       opacity: 0;
       transform: translateX(20px);
@@ -318,7 +310,7 @@
     }
   }
 
-  @keyframes slide-in-left {
+  @keyframes slideInLeft {
     from {
       opacity: 0;
       transform: translateX(-20px);
@@ -329,167 +321,97 @@
     }
   }
 
-  @keyframes glow-pulse {
-    0%, 100% {
-      text-shadow: 0 0 10px rgba(145, 178, 199, 0.4);
-    }
-    50% {
-      text-shadow: 0 0 20px rgba(145, 178, 199, 0.8);
-    }
+  /* Animation utilities */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
   }
 
-  @keyframes rotate-slow {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes flip-in {
-    from {
-      opacity: 0;
-      transform: rotateY(90deg);
-    }
-    to {
-      opacity: 1;
-      transform: rotateY(0deg);
-    }
-  }
-
-  .pulse-glow {
-    animation: pulse-glow 3s ease-in-out infinite;
-  }
-
-  .animate-shimmer {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0),
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0)
-    );
-    background-size: 1000px 100%;
-    animation: shimmer 3s infinite;
-  }
-
-  .bounce-subtle {
-    animation: bounce-subtle 2s ease-in-out infinite;
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
   }
 
   .slide-in-right {
-    animation: slide-in-right 0.6s ease-out forwards;
+    animation: slideInRight 0.6s ease-out forwards;
   }
 
   .slide-in-left {
-    animation: slide-in-left 0.6s ease-out forwards;
+    animation: slideInLeft 0.6s ease-out forwards;
   }
 
-  .glow-pulse {
-    animation: glow-pulse 2s ease-in-out infinite;
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 
-  .rotate-slow {
-    animation: rotate-slow 20s linear infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
   }
 
-  .flip-in {
-    animation: flip-in 0.8s ease-out forwards;
-    perspective: 1000px;
-  }
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
 
-  /* Interactive button states */
-  button, a[role="button"] {
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  button:hover, a[role="button"]:hover {
-    transform: translateY(-2px);
-  }
-
-  button:active, a[role="button"]:active {
-    transform: translateY(0);
-  }
-
-  /* Staggered animation helper */
-  .stagger-1 {
-    animation-delay: 0.1s;
-  }
-  .stagger-2 {
-    animation-delay: 0.2s;
-  }
-  .stagger-3 {
-    animation-delay: 0.3s;
-  }
-  .stagger-4 {
-    animation-delay: 0.4s;
-  }
-
-  /* Interactive card effects */
+  /* Apple Interactive Card */
   .interactive-card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    position: relative;
-  }
-
-  .interactive-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      transparent,
-      rgba(255, 255, 255, 0.05),
-      transparent
-    );
-    transform: translateX(-100%);
-    transition: transform 0.6s;
-    border-radius: inherit;
-  }
-
-  .interactive-card:hover::before {
-    transform: translateX(100%);
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
   }
 
   .interactive-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   }
 
-  /* Fade in animations for page load */
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Apple Badge */
+  .badge-apple {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: hsl(210 100% 50%);
+    color: white;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
   }
 
-  .fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
+  /* Color utilities - Apple style */
+  .text-primary { color: hsl(210 100% 44%); }
+  .text-secondary { color: hsl(0 0% 60%); }
+  .text-tertiary { color: hsl(0 0% 80%); }
+  .text-success { color: hsl(140 71% 46%); }
+  .text-error { color: hsl(0 84% 60%); }
+
+  .bg-primary { background: hsl(210 100% 44%); color: white; }
+  .bg-secondary { background: hsl(0 0% 94%); }
+  .bg-tertiary { background: hsl(0 0% 86%); }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 
-  /* Smooth transitions for input fields */
-  input, textarea, select {
-    transition: all 0.3s ease;
+  /* Apple Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
   }
 
-  input:focus, textarea:focus, select:focus {
-    box-shadow: 0 0 0 3px rgba(129, 115, 149, 0.1);
+  ::-webkit-scrollbar-track {
+    background: transparent;
   }
 
-  /* Hover effects for toolbar buttons */
-  button {
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
 
-  button:hover:not(:disabled) {
-    background-color: var(--secondary);
-    transform: translateY(-1px);
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+    background-clip: padding-box;
   }
 }
