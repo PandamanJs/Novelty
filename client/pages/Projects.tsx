@@ -66,7 +66,10 @@ export default function Projects() {
             >
               <div className="flex items-start justify-between mb-6">
                 <div className="p-3 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/10 group-hover:from-primary/30 group-hover:to-secondary/20 transition-all duration-300">
-                  <BookOpen className="w-6 h-6 text-foreground" strokeWidth={1.5} />
+                  <BookOpen
+                    className="w-6 h-6 text-foreground"
+                    strokeWidth={1.5}
+                  />
                 </div>
                 <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button className="p-2 hover:bg-secondary rounded-lg transition-colors">
@@ -81,7 +84,9 @@ export default function Projects() {
               <h3 className="text-xl font-semibold text-foreground mb-1">
                 {project.title}
               </h3>
-              <p className="text-sm text-muted-foreground mb-6">{project.type}</p>
+              <p className="text-sm text-muted-foreground mb-6">
+                {project.type}
+              </p>
 
               <div className="space-y-3 mb-6 pb-6 border-b border-border">
                 <div className="flex items-center justify-between text-sm">
@@ -118,7 +123,8 @@ export default function Projects() {
             Start writing
           </h3>
           <p className="text-muted-foreground mb-8 font-light leading-relaxed max-w-md mx-auto">
-            Create a new project and start bringing your ideas to life. Tell me in the chat what you'd like to add next.
+            Create a new project and start bringing your ideas to life. Tell me
+            in the chat what you'd like to add next.
           </p>
         </div>
       </div>

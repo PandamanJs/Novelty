@@ -87,7 +87,11 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <Button asChild size="sm" className="w-full mt-2 rounded-lg bg-primary hover:bg-blue-600 text-primary-foreground border-0">
+          <Button
+            asChild
+            size="sm"
+            className="w-full mt-2 rounded-lg bg-primary hover:bg-blue-600 text-primary-foreground border-0"
+          >
             <Link to="/write">Start Writing</Link>
           </Button>
         </div>

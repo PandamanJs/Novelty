@@ -21,7 +21,7 @@ import {
 
 export default function Write() {
   const [content, setContent] = useState(
-    "Once upon a time...\n\nStart writing your story here. This is your blank canvas."
+    "Once upon a time...\n\nStart writing your story here. This is your blank canvas.",
   );
   const [title, setTitle] = useState("Untitled Story");
   const [showStats, setShowStats] = useState(true);
@@ -92,17 +92,25 @@ export default function Write() {
 
           <div className="space-y-2 mb-8">
             <div className="p-3 rounded-lg glass-effect cursor-pointer hover:glass-effect-lg transition-all duration-300">
-              <p className="font-medium text-sm text-foreground">Untitled Story</p>
-              <p className="text-xs text-muted-foreground mt-1">Today at 10:30 AM</p>
+              <p className="font-medium text-sm text-foreground">
+                Untitled Story
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Today at 10:30 AM
+              </p>
             </div>
 
             <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
-              <p className="font-medium text-sm text-foreground">My First Novel</p>
+              <p className="font-medium text-sm text-foreground">
+                My First Novel
+              </p>
               <p className="text-xs text-muted-foreground mt-1">Yesterday</p>
             </div>
 
             <div className="p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors cursor-pointer opacity-60">
-              <p className="font-medium text-sm text-foreground">Poetry Collection</p>
+              <p className="font-medium text-sm text-foreground">
+                Poetry Collection
+              </p>
               <p className="text-xs text-muted-foreground mt-1">3 days ago</p>
             </div>
           </div>
@@ -218,14 +226,20 @@ export default function Write() {
                     </p>
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Words written</span>
+                        <span className="text-muted-foreground">
+                          Words written
+                        </span>
                         <span className="font-medium text-foreground">
                           {wordCount}
                         </span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Writing streak</span>
-                        <span className="font-medium text-foreground">3 days</span>
+                        <span className="text-muted-foreground">
+                          Writing streak
+                        </span>
+                        <span className="font-medium text-foreground">
+                          3 days
+                        </span>
                       </div>
                     </div>
                   </div>

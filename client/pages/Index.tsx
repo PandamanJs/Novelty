@@ -17,7 +17,9 @@ export default function Index() {
             story
           </h1>
           <p className="text-xl text-muted-foreground font-light leading-relaxed mb-12 max-w-2xl">
-            A beautiful, distraction-free platform for writers. Whether it's a novel, blog, poem, or short story—Wordcraft gives you everything you need.
+            A beautiful, distraction-free platform for writers. Whether it's a
+            novel, blog, poem, or short story—Wordcraft gives you everything you
+            need.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3">
@@ -57,7 +59,8 @@ export default function Index() {
               Distraction-free
             </h3>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              A minimal interface that gets out of your way. Focus on what matters—your words.
+              A minimal interface that gets out of your way. Focus on what
+              matters—your words.
             </p>
           </div>
 
@@ -70,7 +73,8 @@ export default function Index() {
               Track progress
             </h3>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Word counts, reading time, writing streaks. See your progress grow.
+              Word counts, reading time, writing streaks. See your progress
+              grow.
             </p>
           </div>
 
@@ -83,7 +87,8 @@ export default function Index() {
               Powerful editing
             </h3>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Rich text formatting, export options, and everything a writer needs.
+              Rich text formatting, export options, and everything a writer
+              needs.
             </p>
           </div>
 
@@ -96,7 +101,8 @@ export default function Index() {
               Share & collaborate
             </h3>
             <p className="text-lg text-muted-foreground font-light leading-relaxed">
-              Share your work with readers. Collaborate with other writers in real time.
+              Share your work with readers. Collaborate with other writers in
+              real time.
             </p>
           </div>
         </div>
@@ -125,9 +131,7 @@ export default function Index() {
             <p className="text-4xl sm:text-5xl font-bold text-primary mb-2">
               2B+
             </p>
-            <p className="text-muted-foreground font-light">
-              Words written
-            </p>
+            <p className="text-muted-foreground font-light">Words written</p>
           </div>
 
           {/* Stat 3 */}
@@ -153,7 +157,8 @@ export default function Index() {
           Always free
         </h2>
         <p className="text-xl text-muted-foreground font-light mb-12 max-w-2xl mx-auto leading-relaxed">
-          No hidden fees. No premium tiers. No paywalls. Wordcraft is free forever, with all features available to everyone.
+          No hidden fees. No premium tiers. No paywalls. Wordcraft is free
+          forever, with all features available to everyone.
         </p>
 
         <Button
@@ -179,12 +184,18 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/write" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/write"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Writing
                 </Link>
               </li>
               <li>
-                <Link to="/projects" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/projects"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Projects
                 </Link>
               </li>
@@ -196,12 +207,18 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   About
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Blog
                 </Link>
               </li>
@@ -213,12 +230,18 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Privacy
                 </Link>
               </li>
               <li>
-                <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <Link
+                  to="/"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Terms
                 </Link>
               </li>
@@ -230,12 +253,18 @@ export default function Index() {
             </p>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Twitter
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors duration-300">
+                <a
+                  href="#"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-300"
+                >
                   Instagram
                 </a>
               </li>
