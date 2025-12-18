@@ -85,13 +85,13 @@ export default function Write() {
       {/* Main Editor Area */}
       <div className="flex-1 flex overflow-hidden">
         {/* Left Sidebar */}
-        <div className="hidden lg:flex flex-col w-64 border-r border-border bg-background/50 backdrop-blur-md p-6 overflow-y-auto">
+        <div className="hidden lg:flex flex-col w-64 border-r border-border/50 glass-effect-sm p-6 overflow-y-auto">
           <h3 className="font-semibold text-foreground mb-6 text-sm uppercase tracking-wide opacity-70">
             Projects
           </h3>
 
           <div className="space-y-2 mb-8">
-            <div className="p-3 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/10 border border-primary/20 cursor-pointer hover:from-primary/30 hover:to-secondary/20 transition-all duration-300">
+            <div className="p-3 rounded-lg glass-effect cursor-pointer hover:glass-effect-lg transition-all duration-300">
               <p className="font-medium text-sm text-foreground">Untitled Story</p>
               <p className="text-xs text-muted-foreground mt-1">Today at 10:30 AM</p>
             </div>
@@ -148,7 +148,7 @@ export default function Write() {
 
             <Button
               size="sm"
-              className="bg-gradient-to-r from-primary to-secondary hover:shadow-lg hover:shadow-primary/50 text-primary-foreground gap-2 rounded-full font-semibold border-0 transition-all duration-300"
+              className="bg-primary hover:bg-blue-600 text-primary-foreground gap-2 rounded-lg font-semibold border-0 transition-all duration-300"
             >
               <Save className="w-4 h-4" />
               <span className="hidden sm:inline">Save Draft</span>
