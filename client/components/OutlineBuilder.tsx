@@ -80,7 +80,7 @@ export function OutlineBuilder({ onInsert }: OutlineBuilderProps) {
   }
 
   return (
-    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-border bg-background max-h-96 overflow-y-auto">
+    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-border bg-background max-h-96 overflow-y-auto slide-in-right">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <BookOpen className="w-5 h-5" style={{ color: "#817395" }} />

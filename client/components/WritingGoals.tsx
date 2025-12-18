@@ -71,7 +71,7 @@ export function WritingGoals({ wordCount = 0 }: WritingGoalsProps) {
   }
 
   return (
-    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-border bg-background">
+    <Card className="absolute top-full mt-2 right-0 w-96 p-4 z-50 shadow-lg border border-border bg-background slide-in-right">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
           <Target className="w-5 h-5" style={{ color: "#91b2c7" }} />

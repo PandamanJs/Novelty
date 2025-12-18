@@ -276,4 +276,220 @@
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
   }
+
+  /* Alive Animations - Interactive & Dynamic */
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.3;
+      box-shadow: 0 0 20px rgba(129, 115, 149, 0.3);
+    }
+    50% {
+      opacity: 0.6;
+      box-shadow: 0 0 40px rgba(129, 115, 149, 0.6);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes bounce-subtle {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(145, 178, 199, 0.4);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(145, 178, 199, 0.8);
+    }
+  }
+
+  @keyframes rotate-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes flip-in {
+    from {
+      opacity: 0;
+      transform: rotateY(90deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite;
+  }
+
+  .bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+  .slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  .slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .rotate-slow {
+    animation: rotate-slow 20s linear infinite;
+  }
+
+  .flip-in {
+    animation: flip-in 0.8s ease-out forwards;
+    perspective: 1000px;
+  }
+
+  /* Interactive button states */
+  button, a[role="button"] {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button:hover, a[role="button"]:hover {
+    transform: translateY(-2px);
+  }
+
+  button:active, a[role="button"]:active {
+    transform: translateY(0);
+  }
+
+  /* Staggered animation helper */
+  .stagger-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-4 {
+    animation-delay: 0.4s;
+  }
+
+  /* Interactive card effects */
+  .interactive-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+  }
+
+  .interactive-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      transparent,
+      rgba(255, 255, 255, 0.05),
+      transparent
+    );
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    border-radius: inherit;
+  }
+
+  .interactive-card:hover::before {
+    transform: translateX(100%);
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Fade in animations for page load */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  /* Smooth transitions for input fields */
+  input, textarea, select {
+    transition: all 0.3s ease;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    box-shadow: 0 0 0 3px rgba(129, 115, 149, 0.1);
+  }
+
+  /* Hover effects for toolbar buttons */
+  button {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  button:hover:not(:disabled) {
+    background-color: var(--secondary);
+    transform: translateY(-1px);
+  }
 }

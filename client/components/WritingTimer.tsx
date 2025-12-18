@@ -59,9 +59,9 @@ export function WritingTimer({ onComplete }: WritingTimerProps) {
   }
 
   return (
-    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border">
-      <Clock className="w-4 h-4 text-muted-foreground" />
-      <span className="text-sm font-mono font-semibold text-foreground">
+    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-secondary/50 border border-border flip-in">
+      <Clock className={`w-4 h-4 text-muted-foreground ${isRunning ? 'animate-pulse' : ''}`} />
+      <span className={`text-sm font-mono font-semibold text-foreground ${isRunning ? 'glow-pulse' : ''}`}>
         {formatTime}
       </span>
       <Button

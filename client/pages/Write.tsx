@@ -12,6 +12,7 @@ import {
   MoreVertical,
   Focus,
   FolderOpen,
+  X,
 } from "lucide-react";
 import {
   DropdownMenu,
@@ -108,11 +109,17 @@ export default function Write() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col relative z-10">
       <Header />
 
+      {/* Animated background orbs */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-blue-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-gradient-to-tr from-blue-500/8 to-cyan-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }} />
+      </div>
+
       {/* Top Bar */}
-      <div className="border-b border-border bg-background/50 backdrop-blur-md">
+      <div className="border-b border-border bg-background/50 backdrop-blur-md relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
             <input
@@ -285,34 +292,44 @@ export default function Write() {
 
             {/* Right Stats Panel */}
             {showStats && (
-              <div className="hidden md:flex flex-col w-80 border-l border-border bg-background/50 backdrop-blur-md p-8 overflow-y-auto">
-                <h3 className="font-semibold text-foreground mb-8 text-sm uppercase tracking-wide opacity-70">
-                  Statistics
-                </h3>
+              <div className="hidden md:flex flex-col w-80 border-l border-border bg-background/50 backdrop-blur-md p-8 overflow-y-auto slide-in-right">
+                <div className="flex items-center justify-between mb-8">
+                  <h3 className="font-semibold text-foreground text-sm uppercase tracking-wide opacity-70">
+                    Statistics
+                  </h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowStats(false)}
+                    className="h-6 w-6 p-0 hover:bg-secondary/30"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                </div>
 
                 <div className="space-y-8">
                   {/* Word Count */}
-                  <div>
+                  <div className="fade-in-up stagger-1">
                     <p className="text-sm text-muted-foreground font-medium mb-2">
                       Words
                     </p>
-                    <p className="text-4xl font-bold text-foreground">
+                    <p className="text-4xl font-bold text-foreground glow-pulse">
                       {wordCount}
                     </p>
                   </div>
 
                   {/* Character Count */}
-                  <div>
+                  <div className="fade-in-up stagger-2">
                     <p className="text-sm text-muted-foreground font-medium mb-2">
                       Characters
                     </p>
-                    <p className="text-4xl font-bold text-foreground">
+                    <p className="text-4xl font-bold text-foreground glow-pulse">
                       {charCount}
                     </p>
                   </div>
 
                   {/* Reading Time */}
-                  <div>
+                  <div className="fade-in-up stagger-3">
                     <p className="text-sm text-muted-foreground font-medium mb-2">
                       Est. Reading Time
                     </p>
