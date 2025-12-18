@@ -64,54 +64,6 @@ export default function Index() {
     },
   ];
 
-  const pricingPlans = [
-    {
-      name: "Free",
-      price: "$0",
-      description: "Perfect for getting started",
-      features: [
-        "Up to 3 projects",
-        "Basic editing tools",
-        "Word count tracking",
-        "Cloud sync",
-      ],
-      cta: "Get Started",
-      variant: "outline" as const,
-    },
-    {
-      name: "Pro",
-      price: "$9.99",
-      period: "/month",
-      description: "Everything you need to write",
-      features: [
-        "Unlimited projects",
-        "Rich text formatting",
-        "Advanced analytics",
-        "Collaboration tools",
-        "Export to multiple formats",
-        "Priority support",
-      ],
-      cta: "Start Free Trial",
-      variant: "default" as const,
-      highlighted: true,
-    },
-    {
-      name: "Publisher",
-      price: "$24.99",
-      period: "/month",
-      description: "For serious authors",
-      features: [
-        "Everything in Pro",
-        "Professional templates",
-        "Formatting assistance",
-        "Publishing guides",
-        "Dedicated account manager",
-        "API access",
-      ],
-      cta: "Contact Sales",
-      variant: "outline" as const,
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
